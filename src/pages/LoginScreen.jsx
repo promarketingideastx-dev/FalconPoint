@@ -33,7 +33,8 @@ export default function LoginScreen() {
       if (err.code === 'auth/email-already-in-use') {
         setError('Email is already registered. Please sign in.');
       } else {
-        setError(isSignUp ? 'Failed to create account.' : 'Invalid credentials or account not found.');
+        // Expose the EXACT Firebase error message to the UI for debugging
+        setError(`Error: ${err.message}`);
       }
       console.error(err);
     } finally {
