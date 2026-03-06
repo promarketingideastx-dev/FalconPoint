@@ -11,7 +11,7 @@ const DEMO_PROJECTS = [
 ];
 
 export function useProjects() {
-  const { user } = useStore(state => ({ user: state.user }));
+  const user = useStore(state => state.user);
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [lastDoc, setLastDoc] = useState(null);
