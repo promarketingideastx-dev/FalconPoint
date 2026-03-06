@@ -10,6 +10,10 @@ i18n
   .init({
     fallbackLng: "en",
     debug: false,
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage']
+    },
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
