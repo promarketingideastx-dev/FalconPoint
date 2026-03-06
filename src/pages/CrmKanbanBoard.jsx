@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useProjects } from '../hooks/useProjects';
+import FileUploader from '../components/FileUploader';
 
 export default function CrmKanbanBoard() {
   const { t } = useTranslation();
-  const { projects, loading, updateProjectStatus } = useProjects();
+  const { projects, loading, updateProjectStatus, loadMore, hasMore } = useProjects();
+  const [activeUploadProject, setActiveUploadProject] = useState(null);
 
   const handleDragStart = (e, projectId) => {
     e.dataTransfer.setData('projectId', projectId);
@@ -66,8 +68,18 @@ export default function CrmKanbanBoard() {
                   </div>
                   <span className="text-xs text-slate-500 dark:text-slate-400">{t('crm.salesRep')}</span>
                 </div>
-                {status === 'Won' && <span className="material-symbols-outlined text-primary">verified</span>}
-                {status !== 'Won' && <span className="material-symbols-outlined text-slate-400 text-sm">attach_file</span>}
+                {status === 'Won' ? (
+                  <span className="material-symbols-outlined text-primary">verified</span>
+                ) : (
+                  <button 
+                    onClick={(e) => { e.stopPropagation(); setActiveUploadProject(project.id); }}
+                    className="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg text-slate-400 hover:text-primary transition-colors flex items-center gap-1"
+                    title="Upload Project Asset"
+                  >
+                    <span className="text-[10px] font-bold">{project.assets?.length || 0}</span>
+                    <span className="material-symbols-outlined text-sm">attach_file</span>
+                  </button>
+                )}
               </div>
             </div>
           ))}
@@ -108,7 +120,18 @@ export default function CrmKanbanBoard() {
         <div className="p-4 md:px-6 flex flex-col md:flex-row md:items-center justify-between gap-4 text-left">
           <div>
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{t('crm.projectPipeline')}</h2>
-            <p className="text-slate-500 dark:text-slate-400 text-sm">{t('crm.managing')} {loading ? '...' : projects.length} {t('crm.activeProjects')}</p>
+            <div className="flex items-center gap-4 mt-1">
+              <p className="text-slate-500 dark:text-slate-400 text-sm">{t('crm.managing')} {loading ? '...' : projects.length} {t('crm.activeProjects')}</p>
+              {hasMore && (
+                <button 
+                  onClick={loadMore} 
+                  disabled={loading}
+                  className="text-xs font-bold text-primary hover:underline bg-primary/10 px-2 py-0.5 rounded-full"
+                >
+                  Load More
+                </button>
+              )}
+            </div>
           </div>
           <div className="flex items-center gap-2">
             <button className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-primary hover:bg-emerald-600 text-white px-5 py-2.5 rounded-lg font-semibold transition-colors shadow-sm">
@@ -148,6 +171,37 @@ export default function CrmKanbanBoard() {
           </Link>
         </div>
       </div>
+      
+      {/* File Upload Modal */}
+      {activeUploadProject && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl p-6 w-full max-w-lg space-y-4">
+            <div className="flex justify-between items-center">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Upload Project File</h3>
+              <button 
+                onClick={() => setActiveUploadProject(null)} 
+                className="text-slate-400 hover:text-slate-600 transition-colors"
+              >
+                <span className="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            
+            <p className="text-slate-500 text-sm mb-4">
+              Add measurements (PDF), roof photos (JPG/PNG), or contracts to this project.
+            </p>
+            
+            <FileUploader 
+              projectId={activeUploadProject} 
+              onUploadSuccess={(url) => {
+                setActiveUploadProject(null);
+                // The hook real-time listener will automatically update the UI 
+                // when the firestore document gets the new asset url.
+              }} 
+            />
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }

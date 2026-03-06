@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ProtectedRoute from './components/ProtectedRoute';
 import { useTranslation } from 'react-i18next';
+import { Toaster } from 'react-hot-toast';
 import SuperAdminDashboard from './pages/SuperAdminDashboard';
 import CrmKanbanBoard from './pages/CrmKanbanBoard';
 import SkyMetricWorkspace from './pages/SkyMetricWorkspace';
@@ -77,6 +78,7 @@ function App() {
             <ProtectedRoute><UnderConstruction /></ProtectedRoute>
           } />
         </Routes>
+        <Toaster position="top-right" toastOptions={{ className: 'dark:bg-slate-800 dark:text-white border border-slate-200 dark:border-slate-700' }} />
       </div>
     </BrowserRouter>
   );
