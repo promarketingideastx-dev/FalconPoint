@@ -14,7 +14,7 @@ export const uploadProjectAsset = async (file, projectId, onProgress) => {
   if (!file || !projectId) throw new Error('File and Project ID are required.');
   
   // DEMO MODE BYPASS
-  if (import.meta.env.VITE_FIREBASE_API_KEY.includes('placeholder')) {
+  if (import.meta.env.VITE_FIREBASE_API_KEY?.includes('placeholder') || !import.meta.env.VITE_FIREBASE_API_KEY) {
     return new Promise((resolve) => {
       let progress = 0;
       const interval = setInterval(() => {

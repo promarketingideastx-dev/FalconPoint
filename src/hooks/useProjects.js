@@ -18,7 +18,7 @@ export function useProjects() {
   const [hasMore, setHasMore] = useState(true);
 
   const PAGE_SIZE = 25;
-  const isDemoMode = import.meta.env.VITE_FIREBASE_API_KEY.includes('placeholder');
+  const isDemoMode = import.meta.env.VITE_FIREBASE_API_KEY?.includes('placeholder') || !import.meta.env.VITE_FIREBASE_API_KEY;
 
   // Initial load
   useEffect(() => {

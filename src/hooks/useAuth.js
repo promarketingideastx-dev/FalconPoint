@@ -9,7 +9,7 @@ export function useAuth() {
 
   useEffect(() => {
     // DEMO MODE BYPASS
-    if (import.meta.env.VITE_FIREBASE_API_KEY.includes('placeholder')) {
+    if (import.meta.env.VITE_FIREBASE_API_KEY?.includes('placeholder') || !import.meta.env.VITE_FIREBASE_API_KEY) {
       console.warn('Running in Demo Mode. Firebase Auth bypassed.');
       // Do not hydrate user automatically so they see the login screen.
       setAuthLoading(false);

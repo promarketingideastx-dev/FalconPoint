@@ -25,7 +25,7 @@ export default function LoginScreen() {
     setIsLoggingIn(true);
     
     // DEMO MODE BYPASS
-    if (import.meta.env.VITE_FIREBASE_API_KEY.includes('placeholder')) {
+    if (import.meta.env.VITE_FIREBASE_API_KEY?.includes('placeholder') || !import.meta.env.VITE_FIREBASE_API_KEY) {
       setTimeout(() => {
         setUser({
           uid: 'demo_user_001',
