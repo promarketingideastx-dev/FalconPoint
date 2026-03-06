@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { collection, query, where, onSnapshot, doc, updateDoc, limit, orderBy, startAfter, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
-import { useAuth } from '../store/useStore';
+import { useStore } from '../store/useStore';
 
 export function useProjects() {
-  const { user } = useAuth(state => ({ user: state.user }));
+  const { user } = useStore(state => ({ user: state.user }));
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [lastDoc, setLastDoc] = useState(null);
