@@ -23,27 +23,7 @@ export default function FalconPointDashboard1() {
             <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50">FALCON <span className="text-primary font-medium">POINT</span></h1>
           </div>
           <div className="flex items-center gap-6">
-            {/* Language Selector */}
-            <div className="flex items-center bg-slate-100 dark:bg-slate-800 rounded-full p-1 px-3 gap-3">
-              <span className="material-symbols-outlined text-sm text-slate-500">language</span>
-              <div className="flex gap-2 text-xs font-bold uppercase tracking-wider">
-                <button 
-                  onClick={() => handleLanguageChange('EN')}
-                  className={i18n.language === 'en' ? 'text-primary' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'}
-                >EN</button>
-                <span className="text-slate-300 dark:text-slate-600">|</span>
-                <button 
-                  onClick={() => handleLanguageChange('ES')}
-                  className={i18n.language === 'es' ? 'text-primary' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'}
-                >ES</button>
-                <span className="text-slate-300 dark:text-slate-600">|</span>
-                <button 
-                  onClick={() => handleLanguageChange('PT')}
-                  className={i18n.language === 'pt' ? 'text-primary' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'}
-                >PT</button>
-              </div>
-            </div>
-            <div className="h-8 w-px bg-slate-200 dark:bg-slate-800"></div>
+
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
                 <img alt="User profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3XZQ18ggorchL1PMKMlc5sxpkXnt0LVKk5PC1wCE6_BJrpxbOXuhjBDPejugn_5WmzLdk9qbdIqywvharZHj5kDSN7U8lvpCRtPB8FuD6iOBRPjpOWVCltPse6t8bvkd3HMX6yabO3jvQ1UtttcgVJfb63v8W_tMp9BCnaO8-tTU4ofhOiWSyIy_-8qbbH8W3ycnfZmdEOu17yJDZr5SEOooTljByW9M-zkKUPOKydBVcuG4IaFMVDZ4oIOTsFNFLEYE2selEkcc"/>

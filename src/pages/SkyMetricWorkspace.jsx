@@ -20,18 +20,7 @@ export default function SkyMetricWorkspace() {
           <h2 className="text-xl font-bold tracking-tight text-slate-900">FALCON <span className="text-[#10B981]">POINT</span></h2>
         </div>
         <div className="flex items-center gap-4">
-          <div className="flex items-center bg-emerald-50 rounded-full px-3 py-1 border border-emerald-100">
-            <span className="material-symbols-outlined text-emerald-600 text-sm mr-2">language</span>
-            <select 
-              className="bg-transparent border-none text-xs font-bold text-emerald-700 focus:ring-0 cursor-pointer p-0 pr-6 uppercase appearance-none"
-              value={i18n.language.toUpperCase()}
-              onChange={handleLanguageChange}
-            >
-              <option value="EN">EN</option>
-              <option value="ES">ES</option>
-              <option value="PT">PT</option>
-            </select>
-          </div>
+
           <button className="material-symbols-outlined text-slate-500 hover:text-primary transition-colors">account_circle</button>
           <div className="h-6 w-px bg-emerald-900/10 mx-1"></div>
           <Link to="/crm" className="flex items-center justify-center p-2 rounded-lg bg-red-50 text-red-500 hover:bg-red-500 hover:text-white transition-colors">

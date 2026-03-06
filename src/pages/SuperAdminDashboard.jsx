@@ -44,10 +44,7 @@ export default function SuperAdminDashboard() {
               >
                 {isSeeding ? 'Seeding...' : 'Seed Data'}
               </button>
-              <div className="flex items-center gap-2 bg-primary/5 px-3 py-1.5 rounded-lg border border-primary/10">
-                <span className="material-symbols-outlined text-primary text-sm">language</span>
-                <p className="text-primary text-sm font-bold leading-normal tracking-wide">English (US)</p>
-              </div>
+
               <div className="size-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">
                 {user?.displayName?.[0] || 'JD'}
               </div>
