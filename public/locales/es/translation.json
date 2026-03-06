@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "dashboard": "Panel",
+    "status": "Estado",
+    "team": "Equipo",
+    "projects": "Proyectos",
+    "reports": "Reportes",
+    "settings": "Configuración",
+    "nodes": "Nodos",
+    "metrics": "Métricas",
+    "clients": "Clientes",
+    "proposal": "Propuesta",
+    "map": "Mapa"
+  },
+  "dashboard": {
+    "engineering_overview": "Resumen de Ingeniería",
+    "subtitle": "Telemetría en tiempo real y logística global.",
+    "new_project": "Nuevo Proyecto",
+    "export_report": "Exportar Reporte",
+    "global_sales": "Ventas Globales",
+    "active_projects": "Proyectos Activos",
+    "system_efficiency": "Eficiencia del Sistema",
+    "revenue_velocity": "Velocidad de Ingresos",
+    "active_nodes": "Nodos Activos",
+    "recent_projects": "Proyectos Recientes",
+    "view_all": "Ver Todo"
+  },
+  "crm": {
+    "pipeline": "Embudo",
+    "search": "Buscar proyectos...",
+    "new_lead": "Nuevo Prospecto",
+    "leads": "Prospectos",
+    "proposal_sent": "Propuesta Enviada",
+    "won": "Ganados"
+  },
+  "settings": {
+    "team_management": "Gestión de Equipo",
+    "costs_pricing": "Costos y Precios",
+    "api_config": "Config. API",
+    "subscription": "Suscripción y Facturación",
+    "sales_team": "Equipo de Ventas",
+    "add_salesperson": "Agregar Vendedor",
+    "pricing_rules": "Reglas Dinámicas de Precios",
+    "core_api": "Integraciones API Base"
+  },
+  "skymetric": {
+    "workspace": "Espacio de Trabajo",
+    "measure": "Medir",
+    "layers": "Capas",
+    "quick_quote": "Cotización Rápida",
+    "area": "Área",
+    "pitch": "Pendiente",
+    "confidence": "Confianza",
+    "generate_pdf": "Generar PDF"
+  },
+  "pricing": {
+    "choose_plan": "Elige tu Plan de Vuelo",
+    "starter": "Básico",
+    "professional": "Profesional",
+    "enterprise": "Empresarial",
+    "most_popular": "Más Popular",
+    "contact_sales": "Contactar Ventas",
+    "choose": "Elegir"
+  }
+}

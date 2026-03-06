@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Falcon Point OS - Precision Measurement CRM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#10B981",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#102219",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }</script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- TopAppBar / Header -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="container mx-auto px-4 h-16 flex items-center justify-between">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-3xl">shield_with_house</span>
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100 uppercase">FALCON POINT</span></div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#features">Features</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#integration">Integration</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#pricing">Pricing</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-1 text-xs font-bold text-slate-500 uppercase tracking-widest">
+<span class="text-primary">EN</span>
+<span class="mx-1">/</span>
+<span>ES</span>
+<span class="mx-1">/</span>
+<span>PT</span>
+</div>
+<button class="bg-primary text-white px-5 py-2 rounded-lg font-semibold text-sm hover:opacity-90 transition-all">
+                    Sign In
+                </button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-16 pb-24 md:pt-24 md:pb-32">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-6 max-w-2xl">
+<div class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20">
+                            v4.0 Launching Now
+                        </div>
+<h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-slate-100">
+                            Precision Measurement meets <span class="text-primary">powerful CRM</span>
+</h1>
+<p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+                            The all-in-one operating system for high-growth tech teams. Manage SkyMetric data and customer relations in one unified interface.
+                        </p>
+<div class="flex flex-wrap gap-4 mt-4">
+<button class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary/20 hover:bg-[#0da372] active:scale-[0.98] transition-all">
+                                Get Started Free
+                            </button>
+<button class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+                                View Demo
+                            </button>
+</div>
+<div class="flex items-center gap-4 mt-4 grayscale opacity-60">
+<span class="text-xs font-semibold uppercase tracking-widest">Trusted by</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined">api</span>
+<span class="material-symbols-outlined">data_thresholding</span>
+<span class="material-symbols-outlined">hub</span>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl">
+<img alt="Dashboard Preview" class="w-full h-auto object-cover" data-alt="Modern dashboard showing data visualization and CRM metrics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuKjLHgNLuEsCpJXN-w2wtrsNEY5kihPeLeWGvmuq2o543C-FRChJfvU1OIL4cF4pqY6tcJfcsTRuj0pHY34hVIxhZ_ZzYrr9_I7UaMKnhUJRFRgoPhDGTvegvPE351iwzJhtrWfvbMKBU6S88dqw3PeQx1nqYhqHDLSt6kaNl-1k3MKG-PEWMtsFV2iRhPGEGhw8x7hitUtWsg4ATpD16tS9rL8ABfqMHE1icV0AjGjVoEdFtLvNoj0EQxgrteA6qyy-Y42KK6cI"/>
+</div>
+<!-- Floating element -->
+<div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 hidden md:block">
+<div class="flex items-center gap-3">
+<div class="bg-primary/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div>
+<p class="text-xs text-slate-500 font-medium">SkyMetric Efficiency</p>
+<p class="text-lg font-bold text-slate-900 dark:text-white">+42.5%</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SkyMetric Integration Section -->
+<section class="bg-slate-50 dark:bg-slate-900/50 py-24" id="integration">
+<div class="container mx-auto px-4">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">SkyMetric Integration</h2>
+<h3 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">Advanced Analytics for Modern Teams</h3>
+<p class="text-slate-600 dark:text-slate-400 text-lg">
+                        Seamlessly sync your SkyMetric data with our powerful CRM tools. Everything you need to scale performance is right here.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-primary/50 transition-colors group">
+<div class="mb-6 bg-slate-100 dark:bg-slate-700 w-14 h-14 rounded-xl flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300 group-hover:text-primary">timer</span>
+</div>
+<h4 class="text-xl font-bold mb-3">Real-time Tracking</h4>
+<p class="text-slate-600 dark:text-slate-400">Precision measurement at every touchpoint of your customer journey.</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-primary/50 transition-colors group">
+<div class="mb-6 bg-slate-100 dark:bg-slate-700 w-14 h-14 rounded-xl flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300 group-hover:text-primary">query_stats</span>
+</div>
+<h4 class="text-xl font-bold mb-3">Automated Reporting</h4>
+<p class="text-slate-600 dark:text-slate-400">Generate SkyMetric insights instantly with customizable automated workflows.</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-primary/50 transition-colors group">
+<div class="mb-6 bg-slate-100 dark:bg-slate-700 w-14 h-14 rounded-xl flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300 group-hover:text-primary">stars</span>
+</div>
+<h4 class="text-xl font-bold mb-3">Smart Lead Scoring</h4>
+<p class="text-slate-600 dark:text-slate-400">Prioritize high-value opportunities automatically based on behavioral metrics.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-24" id="pricing">
+<div class="container mx-auto px-4">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">Transparent Pricing</h2>
+<h3 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">Built for scale, priced for growth</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Starter -->
+<div class="flex flex-col p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 h-full">
+<div class="mb-8">
+<h4 class="text-slate-500 font-bold uppercase text-xs tracking-widest mb-4">Starter</h4>
+<div class="flex items-baseline">
+<span class="text-4xl font-black text-slate-900 dark:text-white">$49</span>
+<span class="text-slate-500 text-sm ml-2">/month</span>
+</div>
+</div>
+<ul class="space-y-4 mb-8 flex-1">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Up to 5 users
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Basic SkyMetric data
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Email Support
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-xl border-2 border-primary text-primary font-bold hover:bg-primary/5 transition-colors">Get Started</button>
+</div>
+<!-- Pro -->
+<div class="flex flex-col p-8 bg-slate-900 dark:bg-primary/10 rounded-3xl border-2 border-primary relative h-full transform md:-translate-y-4 shadow-2xl">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full">Most Popular</div>
+<div class="mb-8">
+<h4 class="text-primary font-bold uppercase text-xs tracking-widest mb-4">Pro</h4>
+<div class="flex items-baseline">
+<span class="text-4xl font-black text-white">$129</span>
+<span class="text-slate-400 text-sm ml-2">/month</span>
+</div>
+</div>
+<ul class="space-y-4 mb-8 flex-1 text-slate-300">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Unlimited users
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Full SkyMetric Integration
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Priority 24/7 Support
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Custom Dashboards
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-xl bg-primary text-white font-bold hover:bg-[#0da372] transition-colors">Choose Pro</button>
+</div>
+<!-- Enterprise -->
+<div class="flex flex-col p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 h-full">
+<div class="mb-8">
+<h4 class="text-slate-500 font-bold uppercase text-xs tracking-widest mb-4">Enterprise</h4>
+<div class="flex items-baseline">
+<span class="text-4xl font-black text-slate-900 dark:text-white">Custom</span>
+</div>
+</div>
+<ul class="space-y-4 mb-8 flex-1">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Multi-org Management
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Dedicated Account Manager
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                On-premise Options
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Custom SLA
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-xl border-2 border-slate-900 dark:border-white font-bold hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-colors">Contact Sales</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-primary">
+<div class="container mx-auto px-4 text-center text-white">
+<h2 class="text-3xl md:text-5xl font-black mb-6">Ready to scale your precision?</h2>
+<p class="text-primary-foreground/80 text-lg mb-10 max-w-xl mx-auto">
+                    Join over 2,500+ tech teams globally using Falcon Point OS to unify their data and customer management.
+                </p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-slate-900 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition-all">Start 14-Day Free Trial</button>
+<button class="bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm text-white px-10 py-4 rounded-xl font-bold text-lg transition-all">Talk to an Expert</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 pt-20 pb-10 border-t border-slate-200 dark:border-slate-800">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16">
+<div class="col-span-2 lg:col-span-2">
+<div class="flex items-center gap-2 mb-6"><span class="material-symbols-outlined text-primary text-2xl">shield_with_house</span>
+<span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white uppercase">FALCON POINT</span></div>
+<p class="text-slate-500 max-w-sm text-sm leading-relaxed mb-6">
+                        The ultimate integration platform for teams who demand precision and growth.
+                    </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer">public</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer">hub</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer">share</span>
+</div>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 dark:text-white mb-6">Product</h5>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Integrations</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Analytics</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">CRM Features</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Pricing</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 dark:text-white mb-6">Resources</h5>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Documentation</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">API Reference</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Guides</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Changelog</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 dark:text-white mb-6">Legal</h5>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Security</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-slate-500 text-xs">© 2024 Falcon Point OS. All rights reserved.</p>
+<div class="flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-slate-400">
+<span class="text-primary">English</span>
+<span class="hover:text-slate-600 cursor-pointer">Español</span>
+<span class="hover:text-slate-600 cursor-pointer">Português</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

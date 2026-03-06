@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Falcon Point OS - Automation &amp; Trigger Builder</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emerald: {
+              500: '#10B981',
+              600: '#059669',
+            },
+            slate: {
+              900: '#0F172A',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    /* Custom styles for workflow connection lines */
+    .workflow-line {
+      width: 2px;
+      height: 24px;
+      background-color: #E2E8F0;
+      margin-left: 24px;
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased">
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-50 bg-white border-b border-slate-200 px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<!-- Falcon Point Logo Concept: Shield with Falcon Head and Emerald Eye -->
+<div class="relative w-8 h-10 flex items-center justify-center" data-purpose="logo-container">
+<svg class="w-full h-full" viewbox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+<!-- Shield Background -->
+<path d="M50 0 L90 20 V60 C90 90 50 115 50 115 C50 115 10 90 10 60 V20 L50 0Z" fill="#0F172A"></path>
+<!-- Falcon Profile -->
+<path d="M35 40 Q50 25 70 45 L65 55 L55 50 L45 65 Z" fill="white"></path>
+<!-- Emerald Map-Pin Eye -->
+<circle cx="58" cy="42" fill="#10B981" r="5"></circle>
+</svg>
+</div>
+<h1 class="font-bold text-lg tracking-tight text-slate-900">FALCON POINT</h1>
+</div>
+<button class="bg-emerald-500 text-white px-4 py-1.5 rounded-lg text-sm font-semibold hover:bg-emerald-600 transition-colors">
+      Publish
+    </button>
+</header>
+<!-- END: MainHeader -->
+<main class="max-w-md mx-auto p-4 space-y-6">
+<!-- BEGIN: WorkflowInfo -->
+<section data-purpose="workflow-meta">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-xl font-bold">New Lead Onboarding</h2>
+<p class="text-slate-500 text-sm italic">Last edited 2 mins ago</p>
+</div>
+<div class="flex items-center gap-2 bg-emerald-50 text-emerald-600 px-3 py-1 rounded-full text-xs font-medium">
+<span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+          Active
+        </div>
+</div>
+</section>
+<!-- END: WorkflowInfo -->
+<!-- BEGIN: AutomationCanvas -->
+<section class="space-y-0" data-purpose="builder-canvas">
+<!-- Trigger Card -->
+<div class="relative">
+<div class="bg-slate-900 text-white p-4 rounded-xl shadow-lg border-l-4 border-emerald-500" data-purpose="trigger-card">
+<div class="flex items-center gap-3 mb-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-emerald-500">Trigger</span>
+<span class="bg-slate-800 p-1.5 rounded">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</span>
+</div>
+<h3 class="text-base font-semibold">If Lead Signed</h3>
+<p class="text-slate-400 text-xs mt-1">When any contract is marked as 'Signed' in CRM</p>
+</div>
+<div class="workflow-line"></div>
+</div>
+<!-- Action Card 1 -->
+<div class="relative">
+<div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm" data-purpose="action-card">
+<div class="flex items-center gap-3 mb-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Action</span>
+<span class="bg-emerald-100 p-1.5 rounded">
+<svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</span>
+</div>
+<h3 class="text-base font-semibold">Send Welcome Email</h3>
+<p class="text-slate-500 text-xs mt-1">Send Template: "Client_Welcome_V2"</p>
+</div>
+<div class="workflow-line"></div>
+</div>
+<!-- Action Card 2 (Incomplete/Empty State) -->
+<div class="relative">
+<button class="w-full border-2 border-dashed border-slate-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-emerald-300 transition-colors group">
+<span class="bg-slate-100 group-hover:bg-emerald-100 p-1 rounded-full transition-colors">
+<svg class="w-5 h-5 text-slate-400 group-hover:text-emerald-500" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</span>
+<span class="text-sm font-medium text-slate-400 group-hover:text-emerald-600">Add Next Step</span>
+</button>
+</div>
+</section>
+<!-- END: AutomationCanvas -->
+<!-- BEGIN: SimpleTemplateEditor -->
+<section class="mt-10 bg-slate-50 rounded-2xl p-4 border border-slate-100" data-purpose="template-editor">
+<h3 class="text-sm font-bold text-slate-500 uppercase tracking-wide mb-4">Action Configuration: Email</h3>
+<div class="space-y-4">
+<div class="flex flex-col gap-1">
+<label class="text-xs font-semibold text-slate-700">Email Subject</label>
+<input class="w-full rounded-lg border-slate-200 text-sm focus:ring-emerald-500 focus:border-emerald-500" type="text" value="Welcome to the family, {{first_name}}!"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-xs font-semibold text-slate-700">Body Content</label>
+<div class="bg-white border border-slate-200 rounded-lg p-3 min-h-[120px] text-sm text-slate-600">
+<p>Hi <span class="bg-emerald-100 text-emerald-700 px-1 rounded">{{first_name}}</span>,</p>
+<br/>
+<p>We're thrilled to have you on board. Your account executive will reach out shortly to schedule your kickoff call.</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-slate-200 text-slate-700 py-2 rounded-lg text-xs font-bold uppercase tracking-wider">Test Step</button>
+<button class="flex-1 bg-emerald-500 text-white py-2 rounded-lg text-xs font-bold uppercase tracking-wider">Save Step</button>
+</div>
+</div>
+</section>
+<!-- END: SimpleTemplateEditor -->
+</main>
+<!-- BEGIN: BottomNav (Mobile Only) -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 flex justify-around items-center py-4 px-6 md:hidden">
+<button class="flex flex-col items-center gap-1 text-emerald-500">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-bold">Workflows</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-bold">Analytics</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m12 4a2 2 0 100-4m0 4a2 2 0 110-4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m-4-2a2 2 0 114 0m-4 0a2 2 0 104 0m-4 0a2 2 0 014 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-bold">Settings</span>
+</button>
+</footer>
+<!-- END: BottomNav -->
+</body></html>

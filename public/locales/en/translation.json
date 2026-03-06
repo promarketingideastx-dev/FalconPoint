@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "status": "Status",
+    "team": "Team",
+    "projects": "Projects",
+    "reports": "Reports",
+    "settings": "Settings",
+    "nodes": "Nodes",
+    "metrics": "Metrics",
+    "clients": "Clients",
+    "proposal": "Proposal",
+    "map": "Map"
+  },
+  "dashboard": {
+    "engineering_overview": "Engineering Overview",
+    "subtitle": "Real-time telemetry and global sales logistics.",
+    "new_project": "New Project",
+    "export_report": "Export Report",
+    "global_sales": "Global Sales",
+    "active_projects": "Active Projects",
+    "system_efficiency": "System Efficiency",
+    "revenue_velocity": "Revenue Velocity",
+    "active_nodes": "Active Nodes",
+    "recent_projects": "Recent Projects",
+    "view_all": "View All"
+  },
+  "crm": {
+    "pipeline": "Pipeline",
+    "search": "Search projects...",
+    "new_lead": "New Lead",
+    "leads": "Leads",
+    "proposal_sent": "Proposal Sent",
+    "won": "Closed Won"
+  },
+  "settings": {
+    "team_management": "Team Management",
+    "costs_pricing": "Costs & Pricing",
+    "api_config": "API Config",
+    "subscription": "Subscription & Billing",
+    "sales_team": "Sales Team",
+    "add_salesperson": "Add Salesperson",
+    "pricing_rules": "Dynamic Pricing Rules",
+    "core_api": "Core API Integrations"
+  },
+  "skymetric": {
+    "workspace": "Workspace",
+    "measure": "Measure",
+    "layers": "Layers",
+    "quick_quote": "Quick Quote",
+    "area": "Area",
+    "pitch": "Pitch",
+    "confidence": "Confidence",
+    "generate_pdf": "Generate PDF"
+  },
+  "pricing": {
+    "choose_plan": "Choose Your Flight Plan",
+    "starter": "Starter",
+    "professional": "Professional",
+    "enterprise": "Enterprise",
+    "most_popular": "Most Popular",
+    "contact_sales": "Contact Sales",
+    "choose": "Choose"
+  }
+}
