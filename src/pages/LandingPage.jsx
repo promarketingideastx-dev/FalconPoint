@@ -256,29 +256,29 @@ export default function LandingPage() {
             <div>
               <h5 className="font-bold text-slate-900 dark:text-white mb-6">Product</h5>
               <ul className="space-y-4 text-sm text-slate-500">
-                <li><a className="hover:text-primary transition-colors" href="#">Integrations</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">Analytics</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">CRM Features</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">Pricing</a></li>
+                <li><a className="hover:text-primary transition-colors" href="/construction">Integrations</a></li>
+                <li><a className="hover:text-primary transition-colors" href="/construction">Analytics</a></li>
+                <li><a className="hover:text-primary transition-colors" href="/construction">CRM Features</a></li>
+                <li><a className="hover:text-primary transition-colors" href="/construction">Pricing</a></li>
               </ul>
             </div>
             
             <div>
               <h5 className="font-bold text-slate-900 dark:text-white mb-6">Resources</h5>
               <ul className="space-y-4 text-sm text-slate-500">
-                <li><a className="hover:text-primary transition-colors" href="#">Documentation</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">API Reference</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">Guides</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">Changelog</a></li>
+                <li><a className="hover:text-primary transition-colors" href="/construction">Documentation</a></li>
+                <li><a className="hover:text-primary transition-colors" href="/construction">API Reference</a></li>
+                <li><a className="hover:text-primary transition-colors" href="/construction">Guides</a></li>
+                <li><a className="hover:text-primary transition-colors" href="/construction">Changelog</a></li>
               </ul>
             </div>
             
             <div>
               <h5 className="font-bold text-slate-900 dark:text-white mb-6">Legal</h5>
               <ul className="space-y-4 text-sm text-slate-500">
-                <li><a className="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">Security</a></li>
+                <li><a className="hover:text-primary transition-colors" href="/construction">Privacy Policy</a></li>
+                <li><a className="hover:text-primary transition-colors" href="/construction">Terms of Service</a></li>
+                <li><a className="hover:text-primary transition-colors" href="/construction">Security</a></li>
               </ul>
             </div>
           </div>

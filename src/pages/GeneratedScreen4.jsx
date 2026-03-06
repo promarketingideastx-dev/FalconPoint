@@ -105,7 +105,7 @@ export default function GeneratedScreen4() {
                 </div>
                 <div className="text-right">
                   <p className="font-bold text-slate-900 text-sm">$290.00</p>
-                  <a className="text-xs text-emerald-500 font-medium hover:underline" href="#">Receipt</a>
+                  <a className="text-xs text-emerald-500 font-medium hover:underline" href="/construction">Receipt</a>
                 </div>
               </div>
               
@@ -122,7 +122,7 @@ export default function GeneratedScreen4() {
                 </div>
                 <div className="text-right">
                   <p className="font-bold text-slate-900 text-sm">$290.00</p>
-                  <a className="text-xs text-emerald-500 font-medium hover:underline" href="#">Receipt</a>
+                  <a className="text-xs text-emerald-500 font-medium hover:underline" href="/construction">Receipt</a>
                 </div>
               </div>
               
@@ -139,7 +139,7 @@ export default function GeneratedScreen4() {
                 </div>
                 <div className="text-right">
                   <p className="font-bold text-slate-900 text-sm">$290.00</p>
-                  <a className="text-xs text-emerald-500 font-medium hover:underline" href="#">Receipt</a>
+                  <a className="text-xs text-emerald-500 font-medium hover:underline" href="/construction">Receipt</a>
                 </div>
               </div>
             </div>
@@ -154,9 +154,9 @@ export default function GeneratedScreen4() {
       <footer className="w-full mt-auto py-10 px-4 border-t border-slate-50">
         <div className="max-w-4xl mx-auto flex flex-col items-center gap-4">
           <nav className="flex gap-6 text-sm font-medium text-slate-500">
-            <a className="hover:text-slate-900" href="#">Privacy Policy</a>
-            <a className="hover:text-slate-900" href="#">Terms of Service</a>
-            <a className="hover:text-slate-900" href="#">Contact Support</a>
+            <a className="hover:text-slate-900" href="/construction">Privacy Policy</a>
+            <a className="hover:text-slate-900" href="/construction">Terms of Service</a>
+            <a className="hover:text-slate-900" href="/construction">Contact Support</a>
           </nav>
           <p className="text-xs text-slate-400">© 2026 Falcon Point OS. All rights reserved.</p>
         </div>

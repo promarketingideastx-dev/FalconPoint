@@ -67,7 +67,7 @@ export default function LoginScreen() {
               <div className="space-y-2 relative">
                 <div className="flex justify-between items-center px-1">
                   <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Password</label>
-                  <a className="text-xs font-medium text-primary hover:underline" href="#">Forgot password?</a>
+                  <a className="text-xs font-medium text-primary hover:underline" href="/construction">Forgot password?</a>
                 </div>
                 <div className="relative group">
                   <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">lock</span>
@@ -89,7 +89,7 @@ export default function LoginScreen() {
             <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center">
               <p className="text-sm text-slate-500">
                 New to the platform? 
-                <a className="text-primary font-bold hover:underline ml-1" href="#">Create an account</a>
+                <a className="text-primary font-bold hover:underline ml-1" href="/construction">Create an account</a>
               </p>
             </div>
           </div>

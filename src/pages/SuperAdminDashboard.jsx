@@ -52,7 +52,7 @@ export default function SuperAdminDashboard() {
           </div>
           <div className="mt-2 text-left">
             <h1 className="text-slate-900 dark:text-slate-50 tracking-tight text-3xl font-extrabold leading-tight">FALCON POINT</h1>
-            <p className="text-slate-500 text-sm font-medium">Super-Admin Global Overview</p>
+            <p className="text-slate-500 text-sm font-medium">{t('superAdmin.subtitle')}</p>
           </div>
         </header>
 
@@ -61,7 +61,7 @@ export default function SuperAdminDashboard() {
           <div className="flex flex-wrap gap-4 p-4 mt-2">
             <div className="flex min-w-[280px] flex-1 flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-primary/10 shadow-sm text-left">
               <div className="flex items-center justify-between">
-                <p className="text-slate-600 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider">Total Revenue</p>
+                <p className="text-slate-600 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider">{t('superAdmin.totalRevenue')}</p>
                 <span className="material-symbols-outlined text-primary">payments</span>
               </div>
               <p className="text-slate-900 dark:text-slate-50 tracking-tight text-3xl font-bold leading-tight">
@@ -75,7 +75,7 @@ export default function SuperAdminDashboard() {
             
             <div className="flex min-w-[280px] flex-1 flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-primary/10 shadow-sm text-left">
               <div className="flex items-center justify-between">
-                <p className="text-slate-600 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider">Active Tenants</p>
+                <p className="text-slate-600 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider">{t('superAdmin.activeTenants')}</p>
                 <span className="material-symbols-outlined text-primary">corporate_fare</span>
               </div>
               <p className="text-slate-900 dark:text-slate-50 tracking-tight text-3xl font-bold leading-tight">1,452</p>
@@ -87,7 +87,7 @@ export default function SuperAdminDashboard() {
             
             <div className="flex min-w-[280px] flex-1 flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-primary/10 shadow-sm text-left">
               <div className="flex items-center justify-between">
-                <p className="text-slate-600 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider">API Usage</p>
+                <p className="text-slate-600 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider">{t('superAdmin.apiUsage')}</p>
                 <span className="material-symbols-outlined text-primary">dynamic_form</span>
               </div>
               <p className="text-slate-900 dark:text-slate-50 tracking-tight text-3xl font-bold leading-tight">104.5M</p>
@@ -102,7 +102,7 @@ export default function SuperAdminDashboard() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-4 py-4 text-left">
             <div className="flex flex-col gap-4 p-6 bg-white dark:bg-slate-900 border border-primary/10 rounded-xl shadow-sm">
               <div>
-                <p className="text-slate-500 text-sm font-medium">Revenue Growth</p>
+                <p className="text-slate-500 text-sm font-medium">{t('superAdmin.revenueGrowth')}</p>
                 <div className="flex items-baseline gap-2 mt-1">
                   <p className="text-slate-900 dark:text-slate-50 tracking-tight text-2xl font-bold">$428.5K</p>
                   <p className="text-primary text-sm font-bold">+12%</p>
@@ -130,7 +130,7 @@ export default function SuperAdminDashboard() {
 
             <div className="flex flex-col gap-4 p-6 bg-white dark:bg-slate-900 border border-primary/10 rounded-xl shadow-sm">
               <div>
-                <p className="text-slate-500 text-sm font-medium">API Consumption (Cloud/Maps)</p>
+                <p className="text-slate-500 text-sm font-medium">{t('superAdmin.apiConsumption')}</p>
                 <div className="flex items-baseline gap-2 mt-1">
                   <p className="text-slate-900 dark:text-slate-50 tracking-tight text-2xl font-bold">89.2M req</p>
                   <p className="text-red-500 text-sm font-bold">-5.2%</p>
@@ -160,10 +160,10 @@ export default function SuperAdminDashboard() {
           {/* Tenants Management Table */}
           <div className="px-4 py-6 text-left">
             <div className="flex items-center justify-between mb-4 px-2">
-              <h2 className="text-slate-900 dark:text-slate-50 text-xl font-bold leading-tight">Tenants Management</h2>
+              <h2 className="text-slate-900 dark:text-slate-50 text-xl font-bold leading-tight">{t('superAdmin.tenantsManagement')}</h2>
               <button className="bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2">
                 <span className="material-symbols-outlined text-sm">add</span>
-                New Tenant
+                {t('superAdmin.newTenant')}
               </button>
             </div>
             <div className="bg-white dark:bg-slate-900 rounded-xl border border-primary/10 overflow-hidden shadow-sm">
@@ -255,19 +255,19 @@ export default function SuperAdminDashboard() {
           <div className="flex justify-around items-center">
             <Link className="flex flex-col items-center gap-1 p-2 text-primary" to="/">
               <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>dashboard</span>
-              <span className="text-[10px] font-bold uppercase tracking-wider">Dashboard</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider">{t('superAdmin.dashboard')}</span>
             </Link>
             <Link className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-primary transition-colors" to="/crm">
               <span className="material-symbols-outlined">corporate_fare</span>
-              <span className="text-[10px] font-bold uppercase tracking-wider">Tenants</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider">{t('superAdmin.tenants')}</span>
             </Link>
             <Link className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-primary transition-colors" to="/skymetric">
               <span className="material-symbols-outlined">data_exploration</span>
-              <span className="text-[10px] font-bold uppercase tracking-wider">API Logs</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider">{t('superAdmin.apiLogs')}</span>
             </Link>
             <Link className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-primary transition-colors" to="/settings">
               <span className="material-symbols-outlined">settings</span>
-              <span className="text-[10px] font-bold uppercase tracking-wider">Settings</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider">{t('superAdmin.settings')}</span>
             </Link>
           </div>
         </nav>

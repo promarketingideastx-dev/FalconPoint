@@ -17,6 +17,7 @@ import GeneratedScreen2 from './pages/GeneratedScreen2';
 import GeneratedScreen3 from './pages/GeneratedScreen3';
 import GeneratedScreen4 from './pages/GeneratedScreen4';
 import PricingPlans from './pages/PricingPlans';
+import UnderConstruction from './pages/UnderConstruction';
 
 function App() {
   const { t } = useTranslation();
@@ -71,6 +72,9 @@ function App() {
           } />
           <Route path="/billing" element={
             <ProtectedRoute><GeneratedScreen4 /></ProtectedRoute>
+          } />
+          <Route path="/construction" element={
+            <ProtectedRoute><UnderConstruction /></ProtectedRoute>
           } />
         </Routes>
       </div>

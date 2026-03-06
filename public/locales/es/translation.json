@@ -61,5 +61,30 @@
     "most_popular": "Más Popular",
     "contact_sales": "Contactar Ventas",
     "choose": "Elegir"
+  },
+  "superAdmin": {
+    "subtitle": "Resumen Global Super-Admin",
+    "totalRevenue": "Ingresos Totales",
+    "activeTenants": "Inquilinos Activos",
+    "apiUsage": "Uso de API",
+    "revenueGrowth": "Crecimiento de Ingresos",
+    "apiConsumption": "Consumo de API (Cloud/Maps)",
+    "tenantsManagement": "Gestión de Inquilinos",
+    "newTenant": "Nuevo Inquilino",
+    "dashboard": "Panel",
+    "tenants": "Inquilinos",
+    "apiLogs": "Registros API",
+    "settings": "Configuración"
+  },
+  "adminSettings": {
+    "teamManagement": "Gestión de Equipo",
+    "subscriptionBilling": "Suscripción y Facturación",
+    "apiConfig": "Configuración API",
+    "salesTeam": "Equipo de Ventas",
+    "salesTeamDesc": "Gestiona a tus agentes de ventas globales y sus permisos.",
+    "addSalesperson": "Agregar Vendedor",
+    "costItems": "Costos y Márgenes",
+    "dynamicPricing": "Reglas Dinámicas de Precios",
+    "coreApiIntegrations": "Integraciones API Base"
   }
 }

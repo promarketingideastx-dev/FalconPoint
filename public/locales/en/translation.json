@@ -61,5 +61,30 @@
     "most_popular": "Most Popular",
     "contact_sales": "Contact Sales",
     "choose": "Choose"
+  },
+  "superAdmin": {
+    "subtitle": "Super-Admin Global Overview",
+    "totalRevenue": "Total Revenue",
+    "activeTenants": "Active Tenants",
+    "apiUsage": "API Usage",
+    "revenueGrowth": "Revenue Growth",
+    "apiConsumption": "API Consumption (Cloud/Maps)",
+    "tenantsManagement": "Tenants Management",
+    "newTenant": "New Tenant",
+    "dashboard": "Dashboard",
+    "tenants": "Tenants",
+    "apiLogs": "API Logs",
+    "settings": "Settings"
+  },
+  "adminSettings": {
+    "teamManagement": "Team Management",
+    "subscriptionBilling": "Subscription & Billing",
+    "apiConfig": "API Config",
+    "salesTeam": "Sales Team",
+    "salesTeamDesc": "Manage your global sales agents and their permissions.",
+    "addSalesperson": "Add Salesperson",
+    "costItems": "Cost Items & Margins",
+    "dynamicPricing": "Dynamic Pricing Rules",
+    "coreApiIntegrations": "Core API Integrations"
   }
 }

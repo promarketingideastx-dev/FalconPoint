@@ -48,14 +48,14 @@ export default function AdminSettings() {
       <main className="flex-1 max-w-7xl mx-auto w-full p-4 md:p-8 space-y-8">
         {/* Tab Navigation */}
         <nav className="flex border-b border-slate-200 dark:border-slate-800 overflow-x-auto no-scrollbar">
-          <Link className="px-6 py-4 border-b-2 border-primary text-primary font-semibold whitespace-nowrap flex items-center gap-2" to="#">
-            <span className="material-symbols-outlined text-[20px]">group</span> Team Management
+          <Link className="px-6 py-4 border-b-2 border-primary text-primary font-semibold whitespace-nowrap flex items-center gap-2" to="/construction">
+            <span className="material-symbols-outlined text-[20px]">group</span> {t('adminSettings.teamManagement')}
           </Link>
           <Link className="px-6 py-4 border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white whitespace-nowrap flex items-center gap-2 transition-colors" to="/pricing">
-            <span className="material-symbols-outlined text-[20px]">credit_card</span> Subscription & Billing
+            <span className="material-symbols-outlined text-[20px]">credit_card</span> {t('adminSettings.subscriptionBilling')}
           </Link>
-          <Link className="px-6 py-4 border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white whitespace-nowrap flex items-center gap-2 transition-colors" to="#">
-            <span className="material-symbols-outlined text-[20px]">api</span> API Config
+          <Link className="px-6 py-4 border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white whitespace-nowrap flex items-center gap-2 transition-colors" to="/construction">
+            <span className="material-symbols-outlined text-[20px]">api</span> {t('adminSettings.apiConfig')}
           </Link>
         </nav>
 
@@ -63,11 +63,11 @@ export default function AdminSettings() {
         <section className="space-y-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Sales Team</h2>
-              <p className="text-slate-500 text-sm">Manage your global sales agents and their permissions.</p>
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{t('adminSettings.salesTeam')}</h2>
+              <p className="text-slate-500 text-sm">{t('adminSettings.salesTeamDesc')}</p>
             </div>
             <button className="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all">
-              <span className="material-symbols-outlined">person_add</span> Add Salesperson
+              <span className="material-symbols-outlined">person_add</span> {t('adminSettings.addSalesperson')}
             </button>
           </div>
           <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
@@ -148,7 +148,7 @@ export default function AdminSettings() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <section className="space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Cost Items &amp; Margins</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t('adminSettings.costItems')}</h3>
               <button className="text-primary text-sm font-semibold hover:underline">Add Item</button>
             </div>
             <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
@@ -177,7 +177,7 @@ export default function AdminSettings() {
           
           <section className="space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Dynamic Pricing Rules</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t('adminSettings.dynamicPricing')}</h3>
               <button className="text-primary text-sm font-semibold hover:underline">New Rule</button>
             </div>
             <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
@@ -215,7 +215,7 @@ export default function AdminSettings() {
 
         {/* API Configurations */}
         <section className="space-y-4">
-          <h3 className="text-lg font-bold text-slate-900 dark:text-white">Core API Integrations</h3>
+          <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t('adminSettings.coreApiIntegrations')}</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Google Maps */}
             <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col gap-4">
@@ -298,15 +298,15 @@ export default function AdminSettings() {
         </Link>
         <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/crm">
           <span className="material-symbols-outlined">group</span>
-          <span className="text-[10px] font-medium">Team</span>
+          <span className="text-[10px] font-medium">{t('superAdmin.tenants')}</span>
         </Link>
         <Link className="flex flex-col items-center gap-1 text-primary transition-colors" to="/settings">
           <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>settings</span>
-          <span className="text-[10px] font-medium">Config</span>
+          <span className="text-[10px] font-medium">{t('superAdmin.settings')}</span>
         </Link>
         <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/skymetric">
           <span className="material-symbols-outlined">article</span>
-          <span className="text-[10px] font-medium">Logs</span>
+          <span className="text-[10px] font-medium">{t('superAdmin.apiLogs')}</span>
         </Link>
       </div>
 
@@ -315,9 +315,9 @@ export default function AdminSettings() {
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-400 text-xs">© 2026 FALCON POINT Enterprise. All rights reserved.</p>
           <div className="flex gap-6">
-            <a className="text-xs text-slate-400 hover:text-primary transition-colors" href="#">Privacy Policy</a>
-            <a className="text-xs text-slate-400 hover:text-primary transition-colors" href="#">System Status</a>
-            <a className="text-xs text-slate-400 hover:text-primary transition-colors" href="#">Documentation</a>
+            <Link className="text-xs text-slate-400 hover:text-primary transition-colors" to="/construction">Privacy Policy</Link>
+            <Link className="text-xs text-slate-400 hover:text-primary transition-colors" to="/construction">System Status</Link>
+            <Link className="text-xs text-slate-400 hover:text-primary transition-colors" to="/construction">Documentation</Link>
           </div>
         </div>
       </footer>
