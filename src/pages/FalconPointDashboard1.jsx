@@ -227,19 +227,19 @@ export default function FalconPointDashboard1() {
         <nav className="md:hidden sticky bottom-0 border-t border-slate-100 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md flex justify-around py-3 px-4 z-50">
           <Link className="flex flex-col items-center gap-1 text-primary" to="/dashboard">
             <span className="material-symbols-outlined">dashboard</span>
-            <span className="text-[10px] font-bold uppercase tracking-wider">Status</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider">{t('nav.dash')}</span>
           </Link>
           <Link className="flex flex-col items-center gap-1 text-slate-400" to="/skymetric">
-            <span className="material-symbols-outlined">layers</span>
-            <span className="text-[10px] font-bold uppercase tracking-wider">Nodes</span>
+            <span className="material-symbols-outlined">map</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider">{t('nav.map')}</span>
           </Link>
           <Link className="flex flex-col items-center gap-1 text-slate-400" to="/crm">
-            <span className="material-symbols-outlined">monitoring</span>
-            <span className="text-[10px] font-bold uppercase tracking-wider">Metrics</span>
+            <span className="material-symbols-outlined">folder</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider">{t('nav.projects')}</span>
           </Link>
           <Link className="flex flex-col items-center gap-1 text-slate-400" to="/settings">
-            <span className="material-symbols-outlined">settings_suggest</span>
-            <span className="text-[10px] font-bold uppercase tracking-wider">Config</span>
+            <span className="material-symbols-outlined">settings</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider">{t('nav.settings')}</span>
           </Link>
         </nav>
 
@@ -252,16 +252,16 @@ export default function FalconPointDashboard1() {
             </div>
           </div>
           <div className="flex flex-col gap-8 flex-1">
-            <Link className="p-2 rounded-lg bg-primary text-white shadow-lg shadow-primary/20" to="/dashboard">
+            <Link className="p-2 rounded-lg bg-primary text-white shadow-lg shadow-primary/20" title={t('nav.dash')} to="/dashboard">
               <span className="material-symbols-outlined">grid_view</span>
             </Link>
-            <Link className="p-2 rounded-lg text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" to="/crm">
-              <span className="material-symbols-outlined">account_tree</span>
+            <Link className="p-2 rounded-lg text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" title={t('nav.map')} to="/skymetric">
+              <span className="material-symbols-outlined">map</span>
             </Link>
-            <Link className="p-2 rounded-lg text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" to="/proposals">
-              <span className="material-symbols-outlined">query_stats</span>
+            <Link className="p-2 rounded-lg text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" title={t('nav.projects')} to="/crm">
+              <span className="material-symbols-outlined">folder</span>
             </Link>
-            <Link className="p-2 rounded-lg text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" to="/settings">
+            <Link className="p-2 rounded-lg text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" title={t('nav.settings')} to="/settings">
               <span className="material-symbols-outlined">settings</span>
             </Link>
           </div>

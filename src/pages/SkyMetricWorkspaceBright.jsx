@@ -133,19 +133,19 @@ export default function SkyMetricWorkspaceBright() {
       <nav className="bg-white border-t border-emerald-900/5 px-6 py-2 pb-6 flex justify-around items-center z-30">
         <Link className="flex flex-col items-center gap-1 text-primary" to="/skymetric-bright">
           <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>map</span>
-          <span className="text-[10px] font-bold uppercase tracking-widest">{t('skymetric.map')}</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest">{t('nav.map')}</span>
         </Link>
         <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-600 transition-colors" to="/crm">
           <span className="material-symbols-outlined">folder</span>
-          <span className="text-[10px] font-bold uppercase tracking-widest">{t('skymetric.projects')}</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest">{t('nav.projects')}</span>
         </Link>
         <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-600 transition-colors" to="/dashboard">
-          <span className="material-symbols-outlined">analytics</span>
-          <span className="text-[10px] font-bold uppercase tracking-widest">{t('skymetric.reports')}</span>
+          <span className="material-symbols-outlined">dashboard</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest">{t('nav.dash')}</span>
         </Link>
         <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-600 transition-colors" to="/settings">
           <span className="material-symbols-outlined">settings</span>
-          <span className="text-[10px] font-bold uppercase tracking-widest">{t('skymetric.settings')}</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest">{t('nav.settings')}</span>
         </Link>
       </nav>
     </div>

@@ -172,19 +172,19 @@ export default function DigitalProposal() {
         <div className="max-w-4xl mx-auto flex items-center justify-around p-2">
           <Link className="flex flex-col items-center gap-1 text-primary" to="/proposals">
             <span className="material-symbols-outlined">description</span>
-            <span className="text-[10px] font-medium">{t('proposal.nav.proposal')}</span>
-          </Link>
-          <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/dashboard">
-            <span className="material-symbols-outlined">dashboard</span>
-            <span className="text-[10px] font-medium">{t('proposal.nav.dash')}</span>
+            <span className="text-[10px] font-medium">{t('nav.proposal')}</span>
           </Link>
           <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/crm">
             <span className="material-symbols-outlined">group</span>
-            <span className="text-[10px] font-medium">{t('proposal.nav.clients')}</span>
+            <span className="text-[10px] font-medium">{t('nav.projects')}</span>
+          </Link>
+          <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/dashboard">
+            <span className="material-symbols-outlined">dashboard</span>
+            <span className="text-[10px] font-medium">{t('nav.dash')}</span>
           </Link>
           <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/settings">
             <span className="material-symbols-outlined">settings</span>
-            <span className="text-[10px] font-medium">{t('proposal.nav.settings')}</span>
+            <span className="text-[10px] font-medium">{t('nav.settings')}</span>
           </Link>
         </div>
       </nav>
