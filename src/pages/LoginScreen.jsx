@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 
 export default function LoginScreen() {
@@ -11,6 +11,7 @@ export default function LoginScreen() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(false);
 
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang.toLowerCase());
@@ -22,10 +23,18 @@ export default function LoginScreen() {
     setIsLoggingIn(true);
     
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      if (isSignUp) {
+        await createUserWithEmailAndPassword(auth, email, password);
+      } else {
+        await signInWithEmailAndPassword(auth, email, password);
+      }
       navigate('/');
     } catch (err) {
-      setError('Invalid credentials or account not found.');
+      if (err.code === 'auth/email-already-in-use') {
+        setError('Email is already registered. Please sign in.');
+      } else {
+        setError(isSignUp ? 'Failed to create account.' : 'Invalid credentials or account not found.');
+      }
       console.error(err);
     } finally {
       setIsLoggingIn(false);
@@ -68,8 +77,12 @@ export default function LoginScreen() {
                 <span className="material-symbols-outlined text-white text-xl translate-y-[-2px] translate-x-[2px]" style={{ fontVariationSettings: "'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48" }}>location_on</span>
               </div>
             </div>
-            <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Welcome Back</h1>
-            <p className="text-slate-500 dark:text-slate-400">Sign in to your multi-tenant dashboard</p>
+            <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+              {isSignUp ? 'Create Account' : 'Welcome Back'}
+            </h1>
+            <p className="text-slate-500 dark:text-slate-400">
+              {isSignUp ? 'Join the secure multi-tenant platform' : 'Sign in to your multi-tenant dashboard'}
+            </p>
           </div>
           
           <div className="bg-white dark:bg-slate-900 shadow-xl shadow-slate-200/50 dark:shadow-none rounded-xl p-8 border border-slate-100 dark:border-slate-800">
@@ -124,14 +137,20 @@ export default function LoginScreen() {
                 disabled={isLoggingIn}
                 className="w-full bg-primary hover:bg-primary/90 disabled:opacity-70 text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group cursor-pointer"
               >
-                {isLoggingIn ? 'Authenticating...' : 'Sign In'}
+                {isLoggingIn ? (isSignUp ? 'Creating...' : 'Authenticating...') : (isSignUp ? 'Create Account' : 'Sign In')}
                 {!isLoggingIn && <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>}
               </button>
             </form>
             <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center">
               <p className="text-sm text-slate-500">
-                New to the platform? 
-                <a className="text-primary font-bold hover:underline ml-1" href="/construction">Create an account</a>
+                {isSignUp ? 'Already have an account?' : 'New to the platform?'} 
+                <button 
+                  type="button" 
+                  onClick={() => setIsSignUp(!isSignUp)}
+                  className="text-primary font-bold hover:underline ml-1"
+                >
+                  {isSignUp ? 'Sign In' : 'Create an account'}
+                </button>
               </p>
             </div>
           </div>
