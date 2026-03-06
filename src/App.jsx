@@ -32,9 +32,10 @@ function App() {
           <Route path="/landing" element={<LandingPage />} />
           <Route path="/quote" element={<InstantQuoteWidget />} />
           
+          {/* Default Public Route */}
+          <Route path="/" element={<InstantQuoteWidget />} />
+
           {/* Protected Routes */}
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
-          
           <Route path="/dashboard" element={
             <ProtectedRoute allowedRoles={['superadmin', 'admin']}><SuperAdminDashboard /></ProtectedRoute>
           } />
