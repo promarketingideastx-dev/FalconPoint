@@ -195,5 +195,24 @@
       "clients": "Clients",
       "settings": "Settings"
     }
+  },
+  "login": {
+    "createAccountTitle": "Create Account",
+    "welcomeBackTitle": "Welcome Back",
+    "createDesc": "Join the secure multi-tenant platform",
+    "loginDesc": "Sign in to your multi-tenant dashboard",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "name@company.com",
+    "passwordLabel": "Password",
+    "forgotPassword": "Forgot password?",
+    "staySignedIn": "Stay signed in for 30 days",
+    "creating": "Creating...",
+    "authenticating": "Authenticating...",
+    "createAccountBtn": "Create Account",
+    "signInBtn": "Sign In",
+    "alreadyHaveAccount": "Already have an account?",
+    "newToPlatform": "New to the platform?",
+    "secureArchitecture": "Secure Multi-Tenant Architecture",
+    "footer": "© 2026 Falcon Point Technologies. All rights reserved. Secure Cloud Operations."
   }
 }

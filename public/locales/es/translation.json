@@ -192,5 +192,24 @@
       "clients": "Clientes",
       "settings": "Config"
     }
+  },
+  "login": {
+    "createAccountTitle": "Crear Cuenta",
+    "welcomeBackTitle": "Bienvenido de Nuevo",
+    "createDesc": "Únete a la plataforma segura multi-inquilino",
+    "loginDesc": "Inicia sesión en tu panel multi-inquilino",
+    "emailLabel": "Dirección de correo",
+    "emailPlaceholder": "nombre@empresa.com",
+    "passwordLabel": "Contraseña",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "staySignedIn": "Mantener sesión iniciada por 30 días",
+    "creating": "Creando...",
+    "authenticating": "Autenticando...",
+    "createAccountBtn": "Crear Cuenta",
+    "signInBtn": "Iniciar Sesión",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "newToPlatform": "¿Nuevo en la plataforma?",
+    "secureArchitecture": "Arquitectura Segura Multi-Inquilino",
+    "footer": "© 2026 Falcon Point Technologies. Todos los derechos reservados. Operaciones Seguras en la Nube."
   }
 }

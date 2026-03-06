@@ -54,10 +54,12 @@ export default function AdminSettings() {
       <header className="bg-white dark:bg-slate-900 border-b border-primary/10 px-4 md:px-8 py-4 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="relative flex items-center justify-center">
-              <img src="/falcon_point_logo_dark_mode/screen.png" alt="Falcon Point Logo" className="h-8 w-auto object-contain" />
-            </div>
-            <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">FALCON <span className="text-primary">POINT</span> Admin</h1>
+            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <div className="relative flex items-center justify-center">
+                <img src="/falcon_point_logo_dark_mode/screen.png" alt="Falcon Point Logo" className="h-8 w-auto object-contain" />
+              </div>
+              <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">FALCON <span className="text-primary">POINT</span> Admin</h1>
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             <div className="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-1">

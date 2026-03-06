@@ -192,5 +192,24 @@
       "clients": "Clientes",
       "settings": "Config"
     }
+  },
+  "login": {
+    "createAccountTitle": "Criar Conta",
+    "welcomeBackTitle": "Bem-vindo de Volta",
+    "createDesc": "Junte-se à plataforma segura multilocatário",
+    "loginDesc": "Faça login no seu painel multilocatário",
+    "emailLabel": "Endereço de email",
+    "emailPlaceholder": "nome@empresa.com",
+    "passwordLabel": "Senha",
+    "forgotPassword": "Esqueceu a senha?",
+    "staySignedIn": "Manter conectado por 30 dias",
+    "creating": "Criando...",
+    "authenticating": "Autenticando...",
+    "createAccountBtn": "Criar Conta",
+    "signInBtn": "Entrar",
+    "alreadyHaveAccount": "Já tem uma conta?",
+    "newToPlatform": "Novo na plataforma?",
+    "secureArchitecture": "Arquitetura Segura Multilocatário",
+    "footer": "© 2026 Falcon Point Technologies. Todos os direitos reservados. Operações Seguras na Nuvem."
   }
 }

@@ -97,22 +97,22 @@ export default function LoginScreen() {
               </div>
             </div>
             <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
-              {isSignUp ? 'Create Account' : 'Welcome Back'}
+              {isSignUp ? t('login.createAccountTitle') : t('login.welcomeBackTitle')}
             </h1>
             <p className="text-slate-500 dark:text-slate-400">
-              {isSignUp ? 'Join the secure multi-tenant platform' : 'Sign in to your multi-tenant dashboard'}
+              {isSignUp ? t('login.createDesc') : t('login.loginDesc')}
             </p>
           </div>
           
           <div className="bg-white dark:bg-slate-900 shadow-xl shadow-slate-200/50 dark:shadow-none rounded-xl p-8 border border-slate-100 dark:border-slate-800">
             <form className="space-y-5" onSubmit={handleLogin}>
               <div className="space-y-2 relative">
-                <label className="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">Email address</label>
+                <label className="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">{t('login.emailLabel')}</label>
                 <div className="relative group">
                   <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">mail</span>
                   <input 
                     className="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 outline-none" 
-                    placeholder="name@company.com" 
+                    placeholder={t('login.emailPlaceholder')} 
                     type="email" 
                     required 
                     value={email}
@@ -122,8 +122,8 @@ export default function LoginScreen() {
               </div>
               <div className="space-y-2 relative">
                 <div className="flex justify-between items-center px-1">
-                  <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Password</label>
-                  <a className="text-xs font-medium text-primary hover:underline" href="/construction">Forgot password?</a>
+                  <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">{t('login.passwordLabel')}</label>
+                  <a className="text-xs font-medium text-primary hover:underline" href="/construction">{t('login.forgotPassword')}</a>
                 </div>
                 <div className="relative group">
                   <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">lock</span>
@@ -142,7 +142,7 @@ export default function LoginScreen() {
               </div>
               <div className="flex items-center space-x-2 px-1 pb-2">
                 <input className="rounded border-slate-300 text-primary focus:ring-primary" id="remember" type="checkbox"/>
-                <label className="text-sm text-slate-600 dark:text-slate-400 cursor-pointer" htmlFor="remember">Stay signed in for 30 days</label>
+                <label className="text-sm text-slate-600 dark:text-slate-400 cursor-pointer" htmlFor="remember">{t('login.staySignedIn')}</label>
               </div>
               {error && (
                 <div className="p-3 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-sm font-semibold rounded-lg flex items-center gap-2">
@@ -156,19 +156,19 @@ export default function LoginScreen() {
                 disabled={isLoggingIn}
                 className="w-full bg-primary hover:bg-primary/90 disabled:opacity-70 text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group cursor-pointer"
               >
-                {isLoggingIn ? (isSignUp ? 'Creating...' : 'Authenticating...') : (isSignUp ? 'Create Account' : 'Sign In')}
+                {isLoggingIn ? (isSignUp ? t('login.creating') : t('login.authenticating')) : (isSignUp ? t('login.createAccountBtn') : t('login.signInBtn'))}
                 {!isLoggingIn && <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>}
               </button>
             </form>
             <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center">
               <p className="text-sm text-slate-500">
-                {isSignUp ? 'Already have an account?' : 'New to the platform?'} 
+                {isSignUp ? t('login.alreadyHaveAccount') : t('login.newToPlatform')} 
                 <button 
                   type="button" 
                   onClick={() => setIsSignUp(!isSignUp)}
                   className="text-primary font-bold hover:underline ml-1"
                 >
-                  {isSignUp ? 'Sign In' : 'Create an account'}
+                  {isSignUp ? t('login.signInBtn') : t('login.createAccountBtn')}
                 </button>
               </p>
             </div>
@@ -179,7 +179,7 @@ export default function LoginScreen() {
               <div className="h-8 w-px bg-slate-300 dark:bg-slate-700"></div>
               <div className="flex items-center gap-2 text-slate-400">
                 <span className="material-symbols-outlined">verified_user</span>
-                <span className="text-xs font-medium tracking-widest uppercase">Secure Multi-Tenant Architecture</span>
+                <span className="text-xs font-medium tracking-widest uppercase">{t('login.secureArchitecture')}</span>
               </div>
               <div className="h-8 w-px bg-slate-300 dark:bg-slate-700"></div>
             </div>
@@ -199,7 +199,7 @@ export default function LoginScreen() {
       </main>
 
       <footer className="p-6 text-center text-slate-400 dark:text-slate-600 text-xs relative z-10">
-        © 2026 Falcon Point Technologies. All rights reserved. Secure Cloud Operations.
+        {t('login.footer')}
       </footer>
       
       <div className="fixed bottom-0 right-0 p-8 pointer-events-none opacity-20">
