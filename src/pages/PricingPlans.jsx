@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
+import { detectPlatform, purchasePlan, PLATFORMS } from '../services/billing';
 
 export default function PricingPlans() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [platform, setPlatform] = useState(PLATFORMS.WEB);
 
-  const handleSelectPlan = (plan) => {
-    // In a real app we would save the selected plan state
-    navigate('/billing');
+  useEffect(() => {
+    setPlatform(detectPlatform());
+  }, []);
+
+  const isMobile = platform === PLATFORMS.IOS || platform === PLATFORMS.ANDROID;
+
+  const handleSelectPlan = async (plan) => {
+    try {
+      await purchasePlan(plan);
+    } catch (error) {
+      console.error('Failed to initiate purchase', error);
+    }
   };
 
   return (
@@ -56,7 +67,7 @@ export default function PricingPlans() {
               onClick={() => handleSelectPlan('starter')}
               className="w-full py-3 px-4 rounded-xl font-bold bg-slate-700 hover:bg-slate-600 text-white transition-colors"
             >
-              {t('pricing.chooseStarter')}
+              {isMobile ? t('pricing.subscribe_mobile') : t('pricing.chooseStarter')}
             </button>
           </div>
 
@@ -96,9 +107,10 @@ export default function PricingPlans() {
             </div>
             <button 
               onClick={() => handleSelectPlan('professional')}
-              className="w-full py-3 px-4 rounded-xl font-bold bg-primary hover:bg-emerald-400 text-slate-900 transition-colors shadow-lg shadow-primary/20"
+              className="w-full py-3 px-4 rounded-xl font-bold bg-primary hover:bg-emerald-400 text-slate-900 transition-colors shadow-lg shadow-primary/20 flex justify-center items-center gap-2"
             >
-              {t('pricing.choosePro')}
+              {isMobile && <span className="material-symbols-outlined text-lg">phone_iphone</span>}
+              {isMobile ? t('pricing.subscribe_mobile') : t('pricing.choosePro')}
             </button>
           </div>
 

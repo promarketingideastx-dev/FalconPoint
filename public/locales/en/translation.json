@@ -146,6 +146,7 @@
   },
   "pricing": {
     "choose_plan": "Choose Your Flight Plan",
+    "subscribe_mobile": "Subscribe with Apple/Google",
     "subtitle": "Scale your telemetry and solar estimation operations with transparent, usage-based pricing designed for growing teams.",
     "starter": "Starter",
     "starterDesc": "For independent contractors.",

@@ -142,8 +142,9 @@
     "generatePdf": "Gerar PDF"
   },
   "pricing": {
-    "choose_plan": "Escolha Seu Plano de Voo",
-    "subtitle": "Escale suas operações de telemetria e estimativa solar com preços transparentes.",
+    "choose_plan": "Escolha seu Plano de Voo",
+    "subscribe_mobile": "Assinar com Apple/Google",
+    "subtitle": "Escale suas operações de telemetria e estimativa solar com preços transparentes baseados no uso, projetados para equipes em crescimento.",
     "starter": "Inicial",
     "starterDesc": "Para empreiteiros independentes.",
     "professional": "Profissional",

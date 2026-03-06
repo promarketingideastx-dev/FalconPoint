@@ -143,7 +143,8 @@
   },
   "pricing": {
     "choose_plan": "Elige Tu Plan de Vuelo",
-    "subtitle": "Escala tus operaciones de telemetría y estimación solar con precios transparentes.",
+    "subscribe_mobile": "Suscribirse con Apple/Google",
+    "subtitle": "Escala tus operaciones de telemetría y estimación solar con precios transparentes basados en el uso, diseñados para equipos en crecimiento.",
     "starter": "Básico",
     "starterDesc": "Para contratistas independientes.",
     "professional": "Profesional",
