@@ -25,7 +25,7 @@ export default function DigitalProposal() {
           </div>
           <div className="flex-1">
             <h1 className="text-lg font-bold leading-tight tracking-tight">FALCON POINT</h1>
-            <p className="text-xs text-slate-500 uppercase tracking-widest">Digital Proposal / Propuesta / Proposition</p>
+            <p className="text-xs text-slate-500 uppercase tracking-widest">{t('proposal.title')}</p>
           </div>
           <div className="flex gap-2">
             <button className="p-2 hover:bg-primary/10 rounded-full text-slate-600 dark:text-slate-400">
@@ -44,7 +44,7 @@ export default function DigitalProposal() {
           <div className="absolute bottom-6 left-6 z-20">
             <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold mb-2 inline-block">PROJECT ID: FP-2024-089</span>
             <h2 className="text-white text-3xl font-bold">Premium Roofing Installation</h2>
-            <p className="text-primary/90 font-medium">Prepared for: West Creek Estates</p>
+            <p className="text-primary/90 font-medium">{t('proposal.preparedFor')}: West Creek Estates</p>
           </div>
         </div>
 
@@ -53,9 +53,9 @@ export default function DigitalProposal() {
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-xl font-bold flex items-center gap-2">
               <span className="material-symbols-outlined text-primary">layers</span>
-              SkyMetric Satellite Map / Mapa / Carte
+              {t('proposal.map')}
             </h3>
-            <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">PRECISION: 99.8%</span>
+            <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">{t('proposal.precision')}</span>
           </div>
           
           <div className="relative rounded-xl overflow-hidden border-2 border-primary/20 bg-slate-800 aspect-video group">
@@ -83,7 +83,7 @@ export default function DigitalProposal() {
         <section className="p-6 bg-primary/5">
           <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
             <span className="material-symbols-outlined text-primary">inventory_2</span>
-            Material Breakdown / Materiales / Matériaux
+            {t('proposal.materialBreakdown')}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-primary/10 flex gap-4">
@@ -115,23 +115,23 @@ export default function DigitalProposal() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-3xl rounded-full -mr-16 -mt-16"></div>
             <div className="relative z-10 flex flex-col md:flex-row justify-between items-end gap-6">
               <div>
-                <p className="text-slate-400 text-sm uppercase tracking-widest mb-1">Total Investment / Inversión / Investissement</p>
+                <p className="text-slate-400 text-sm uppercase tracking-widest mb-1">{t('proposal.totalInvestment')}</p>
                 <h2 className="text-5xl font-extrabold text-primary">
                   {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalPrice)}
                 </h2>
               </div>
               <div className="w-full md:w-auto text-right space-y-2">
                 <div className="flex justify-between md:justify-end gap-8 text-sm text-slate-400">
-                  <span>Labor &amp; Permits:</span>
+                  <span>{t('proposal.laborPermits')}:</span>
                   <span className="text-white">{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(laborPrice)}</span>
                 </div>
                 <div className="flex justify-between md:justify-end gap-8 text-sm text-slate-400">
-                  <span>Materials Total (@ ${settings.unit_price}/sqft):</span>
+                  <span>{t('proposal.materialsTotal')} (@ ${settings.unit_price}/sqft):</span>
                   <span className="text-white">{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(materialsPrice)}</span>
                 </div>
                 <div className="h-px bg-slate-700 my-2"></div>
                 <button className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-colors flex items-center justify-center gap-2">
-                  Accept Proposal <span className="material-symbols-outlined">arrow_forward</span>
+                  {t('proposal.accept')} <span className="material-symbols-outlined">arrow_forward</span>
                 </button>
               </div>
             </div>
@@ -140,7 +140,7 @@ export default function DigitalProposal() {
 
         {/* Terms and Conditions */}
         <section className="p-6 border-t border-slate-100 dark:border-slate-800">
-          <h3 className="text-sm font-bold uppercase text-slate-400 mb-4 tracking-tighter">Terms &amp; Conditions / Términos / Conditions</h3>
+          <h3 className="text-sm font-bold uppercase text-slate-400 mb-4 tracking-tighter">{t('proposal.terms')}</h3>
           <div className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed space-y-2 h-32 overflow-y-auto pr-2 custom-scrollbar">
             <p>1. <strong>Validity:</strong> This proposal is valid for 30 days from the date of issuance.</p>
             <p>2. <strong>Scope:</strong> Work is limited strictly to the items mentioned in the material breakdown. Any structural rot discovered during teardown will be billed at $85/hr plus materials.</p>
@@ -154,11 +154,11 @@ export default function DigitalProposal() {
         <section className="p-6 bg-slate-50 dark:bg-slate-800/50 mx-6 rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 mb-12">
           <div className="flex flex-col items-center justify-center py-8">
             <span className="material-symbols-outlined text-4xl text-slate-300 mb-2">draw</span>
-            <p className="text-sm text-slate-400 mb-6">Click to Sign Digitally / Firmar / Signer</p>
+            <p className="text-sm text-slate-400 mb-6">{t('proposal.clickSign')}</p>
             <div className="w-full max-w-md h-32 bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 relative cursor-crosshair">
               {/* Signature placeholder */}
               <div className="absolute bottom-4 left-4 right-4 border-b border-slate-200"></div>
-              <span className="absolute bottom-1 left-4 text-[10px] text-slate-400">Authorized Signature</span>
+              <span className="absolute bottom-1 left-4 text-[10px] text-slate-400">{t('proposal.authSignature')}</span>
             </div>
           </div>
         </section>
@@ -169,19 +169,19 @@ export default function DigitalProposal() {
         <div className="max-w-4xl mx-auto flex items-center justify-around p-2">
           <Link className="flex flex-col items-center gap-1 text-primary" to="/proposals">
             <span className="material-symbols-outlined">description</span>
-            <span className="text-[10px] font-medium">Proposal</span>
+            <span className="text-[10px] font-medium">{t('proposal.nav.proposal')}</span>
           </Link>
           <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/dashboard">
             <span className="material-symbols-outlined">dashboard</span>
-            <span className="text-[10px] font-medium">Dash</span>
+            <span className="text-[10px] font-medium">{t('proposal.nav.dash')}</span>
           </Link>
           <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/crm">
             <span className="material-symbols-outlined">group</span>
-            <span className="text-[10px] font-medium">Clients</span>
+            <span className="text-[10px] font-medium">{t('proposal.nav.clients')}</span>
           </Link>
           <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/settings">
             <span className="material-symbols-outlined">settings</span>
-            <span className="text-[10px] font-medium">Settings</span>
+            <span className="text-[10px] font-medium">{t('proposal.nav.settings')}</span>
           </Link>
         </div>
       </nav>

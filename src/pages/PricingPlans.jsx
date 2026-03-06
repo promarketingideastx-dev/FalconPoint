@@ -19,11 +19,11 @@ export default function PricingPlans() {
             <span className="material-symbols-outlined mr-2">arrow_back</span>
             Back to Settings
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            {t('pricing.choose_plan').split('Flight Plan')[0]} <span className="text-primary">{t('pricing.choose_plan').split('Choose Your ')[1] || 'Flight Plan'}</span>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            {t('pricing.choose_plan')}
           </h1>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-            Scale your telemetry and solar estimation operations with transparent, usage-based pricing designed for growing teams.
+            {t('pricing.subtitle')}
           </p>
         </div>
 
@@ -32,7 +32,7 @@ export default function PricingPlans() {
           <div className="bg-slate-800 border border-slate-700 rounded-2xl p-8 flex flex-col justify-between hover:border-primary transition-colors">
             <div>
               <h3 className="text-xl font-bold text-slate-200">{t('pricing.starter')}</h3>
-              <p className="text-slate-400 text-sm mt-2 font-medium">For independent contractors.</p>
+              <p className="text-slate-400 text-sm mt-2 font-medium">{t('pricing.starterDesc')}</p>
               <div className="my-6">
                 <span className="text-4xl font-black text-white">$99</span>
                 <span className="text-slate-500 font-medium tracking-wide text-sm"> /mo</span>
@@ -56,21 +56,21 @@ export default function PricingPlans() {
               onClick={() => handleSelectPlan('starter')}
               className="w-full py-3 px-4 rounded-xl font-bold bg-slate-700 hover:bg-slate-600 text-white transition-colors"
             >
-              Choose Starter
+              {t('pricing.chooseStarter')}
             </button>
           </div>
 
           {/* Professional Plan (Highlighted) */}
           <div className="bg-slate-800 border-2 border-primary rounded-2xl p-8 flex flex-col justify-between relative transform md:-translate-y-4 shadow-2xl shadow-primary/20">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">
-              Most Popular
+              {t('pricing.mostPopular')}
             </div>
             <div>
               <h3 className="text-xl font-bold text-slate-100 flex items-center gap-2">
                 <span className="material-symbols-outlined text-primary">verified</span>
                 {t('pricing.professional')}
               </h3>
-              <p className="text-slate-400 text-sm mt-2 font-medium">For growing roofing enterprises.</p>
+              <p className="text-slate-400 text-sm mt-2 font-medium">{t('pricing.professionalDesc')}</p>
               <div className="my-6">
                 <span className="text-4xl font-black text-white">$299</span>
                 <span className="text-slate-500 font-medium tracking-wide text-sm"> /mo</span>
@@ -98,7 +98,7 @@ export default function PricingPlans() {
               onClick={() => handleSelectPlan('professional')}
               className="w-full py-3 px-4 rounded-xl font-bold bg-primary hover:bg-emerald-400 text-slate-900 transition-colors shadow-lg shadow-primary/20"
             >
-              Choose Professional
+              {t('pricing.choosePro')}
             </button>
           </div>
 
@@ -106,7 +106,7 @@ export default function PricingPlans() {
           <div className="bg-slate-800 border border-slate-700 rounded-2xl p-8 flex flex-col justify-between hover:border-primary transition-colors">
             <div>
               <h3 className="text-xl font-bold text-slate-200">{t('pricing.enterprise')}</h3>
-              <p className="text-slate-400 text-sm mt-2 font-medium">For national scale operations.</p>
+              <p className="text-slate-400 text-sm mt-2 font-medium">{t('pricing.enterpriseDesc')}</p>
               <div className="my-6">
                 <span className="text-4xl font-black text-white">Custom</span>
               </div>

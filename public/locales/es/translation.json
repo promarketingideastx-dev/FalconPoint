@@ -25,14 +25,6 @@
     "recent_projects": "Proyectos Recientes",
     "view_all": "Ver Todo"
   },
-  "crm": {
-    "pipeline": "Embudo",
-    "search": "Buscar proyectos...",
-    "new_lead": "Nuevo Prospecto",
-    "leads": "Prospectos",
-    "proposal_sent": "Propuesta Enviada",
-    "won": "Ganados"
-  },
   "settings": {
     "team_management": "Gestión de Equipo",
     "costs_pricing": "Costos y Precios",
@@ -42,25 +34,6 @@
     "add_salesperson": "Agregar Vendedor",
     "pricing_rules": "Reglas Dinámicas de Precios",
     "core_api": "Integraciones API Base"
-  },
-  "skymetric": {
-    "workspace": "Espacio de Trabajo",
-    "measure": "Medir",
-    "layers": "Capas",
-    "quick_quote": "Cotización Rápida",
-    "area": "Área",
-    "pitch": "Pendiente",
-    "confidence": "Confianza",
-    "generate_pdf": "Generar PDF"
-  },
-  "pricing": {
-    "choose_plan": "Elige tu Plan de Vuelo",
-    "starter": "Básico",
-    "professional": "Profesional",
-    "enterprise": "Empresarial",
-    "most_popular": "Más Popular",
-    "contact_sales": "Contactar Ventas",
-    "choose": "Elegir"
   },
   "superAdmin": {
     "subtitle": "Resumen Global Super-Admin",
@@ -150,6 +123,73 @@
       "privacy": "Privacidad",
       "status": "Estado del Sistema",
       "docs": "Documentación"
+    }
+  },
+  "skymetric": {
+    "workspace": "Espacio de Trabajo",
+    "map": "Mapa",
+    "projects": "Proyectos",
+    "reports": "Reportes",
+    "settings": "Configuración",
+    "measure": "Medir",
+    "layers": "Capas",
+    "quickQuote": "Cotización Rápida",
+    "projectRef": "Proyecto: Análisis de Techo",
+    "estimated": "Estimado",
+    "area": "Área",
+    "pitch": "Pendiente",
+    "confidence": "Confianza",
+    "generatePdf": "Generar PDF"
+  },
+  "pricing": {
+    "choose_plan": "Elige Tu Plan de Vuelo",
+    "subtitle": "Escala tus operaciones de telemetría y estimación solar con precios transparentes.",
+    "starter": "Básico",
+    "starterDesc": "Para contratistas independientes.",
+    "professional": "Profesional",
+    "professionalDesc": "Para empresas en crecimiento.",
+    "enterprise": "Empresarial",
+    "enterpriseDesc": "Para operaciones a nivel nacional.",
+    "mostPopular": "Más Popular",
+    "chooseStarter": "Elegir Básico",
+    "choosePro": "Elegir Profesional",
+    "contact_sales": "Contactar Ventas"
+  },
+  "crm": {
+    "projectPipeline": "Pipeline de Proyectos",
+    "managing": "Gestionando",
+    "activeProjects": "proyectos activos en regiones",
+    "newProject": "Nuevo Proyecto",
+    "captured": "Capturado",
+    "measured": "Medido",
+    "quoted": "Cotizado",
+    "contracted": "Contratado",
+    "salesRep": "Vendedor",
+    "nav": {
+      "board": "Tablero",
+      "projects": "Proyectos",
+      "admin": "Admin",
+      "settings": "Config"
+    }
+  },
+  "proposal": {
+    "title": "Propuesta Digital",
+    "preparedFor": "Preparado para",
+    "map": "Mapa Satelital SkyMetric",
+    "precision": "PRECISIÓN: 99.8%",
+    "materialBreakdown": "Desglose de Materiales",
+    "totalInvestment": "Inversión Total",
+    "laborPermits": "Mano de Obra y Permisos",
+    "materialsTotal": "Total de Materiales",
+    "accept": "Aceptar Propuesta",
+    "terms": "Términos y Condiciones",
+    "clickSign": "Clic para Firmar Digitalmente",
+    "authSignature": "Firma Autorizada",
+    "nav": {
+      "proposal": "Propuesta",
+      "dash": "Panel",
+      "clients": "Clientes",
+      "settings": "Config"
     }
   }
 }

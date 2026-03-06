@@ -64,7 +64,7 @@ export default function CrmKanbanBoard() {
                   <div className="size-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden text-[10px] font-bold text-slate-500">
                     JD
                   </div>
-                  <span className="text-xs text-slate-500 dark:text-slate-400">Sales Rep</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400">{t('crm.salesRep')}</span>
                 </div>
                 {status === 'Won' && <span className="material-symbols-outlined text-primary">verified</span>}
                 {status !== 'Won' && <span className="material-symbols-outlined text-slate-400 text-sm">attach_file</span>}
@@ -101,13 +101,13 @@ export default function CrmKanbanBoard() {
         {/* Sub Header */}
         <div className="p-4 md:px-6 flex flex-col md:flex-row md:items-center justify-between gap-4 text-left">
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Project Pipeline</h2>
-            <p className="text-slate-500 dark:text-slate-400 text-sm">Managing {loading ? '...' : projects.length} active projects across regions</p>
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{t('crm.projectPipeline')}</h2>
+            <p className="text-slate-500 dark:text-slate-400 text-sm">{t('crm.managing')} {loading ? '...' : projects.length} {t('crm.activeProjects')}</p>
           </div>
           <div className="flex items-center gap-2">
             <button className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-primary hover:bg-emerald-600 text-white px-5 py-2.5 rounded-lg font-semibold transition-colors shadow-sm">
               <span className="material-symbols-outlined text-lg">add</span>
-              <span>New Project</span>
+              <span>{t('crm.newProject')}</span>
             </button>
           </div>
         </div>
@@ -115,10 +115,10 @@ export default function CrmKanbanBoard() {
         {/* Kanban Board Container */}
         <main className="flex-1 overflow-x-auto hide-scrollbar p-4 md:px-6 h-[calc(100vh-180px)] text-left">
           <div className="flex gap-6 h-full min-w-max">
-            {renderColumn('Captured', 'Captured', 'bg-blue-500', 'bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400')}
-            {renderColumn('Measured', 'Measured', 'bg-amber-500', 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400')}
-            {renderColumn('Quoted', 'Quoted', 'bg-primary', 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400')}
-            {renderColumn('Won', 'Contracted', 'bg-slate-800 dark:bg-white', 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-400')}
+            {renderColumn('Captured', t('crm.captured'), 'bg-blue-500', 'bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400')}
+            {renderColumn('Measured', t('crm.measured'), 'bg-amber-500', 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400')}
+            {renderColumn('Quoted', t('crm.quoted'), 'bg-primary', 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400')}
+            {renderColumn('Won', t('crm.contracted'), 'bg-slate-800 dark:bg-white', 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-400')}
           </div>
         </main>
 
@@ -126,19 +126,19 @@ export default function CrmKanbanBoard() {
         <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex justify-around p-3 z-50">
           <Link className="flex flex-col items-center gap-1 text-primary" to="/crm">
             <span className="material-symbols-outlined">view_kanban</span>
-            <span className="text-[10px] font-bold">Board</span>
+            <span className="text-[10px] font-bold">{t('crm.nav.board')}</span>
           </Link>
-          <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/dashboard1">
+          <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/dashboard2">
             <span className="material-symbols-outlined">folder</span>
-            <span className="text-[10px] font-bold">Projects</span>
+            <span className="text-[10px] font-bold">{t('crm.nav.projects')}</span>
           </Link>
           <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/">
             <span className="material-symbols-outlined">dashboard</span>
-            <span className="text-[10px] font-bold">Admin</span>
+            <span className="text-[10px] font-bold">{t('crm.nav.admin')}</span>
           </Link>
           <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/settings">
             <span className="material-symbols-outlined">settings</span>
-            <span className="text-[10px] font-bold">Settings</span>
+            <span className="text-[10px] font-bold">{t('crm.nav.settings')}</span>
           </Link>
         </div>
       </div>

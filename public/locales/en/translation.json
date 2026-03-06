@@ -25,14 +25,7 @@
     "recent_projects": "Recent Projects",
     "view_all": "View All"
   },
-  "crm": {
-    "pipeline": "Pipeline",
-    "search": "Search projects...",
-    "new_lead": "New Lead",
-    "leads": "Leads",
-    "proposal_sent": "Proposal Sent",
-    "won": "Closed Won"
-  },
+
   "settings": {
     "team_management": "Team Management",
     "costs_pricing": "Costs & Pricing",
@@ -43,25 +36,8 @@
     "pricing_rules": "Dynamic Pricing Rules",
     "core_api": "Core API Integrations"
   },
-  "skymetric": {
-    "workspace": "Workspace",
-    "measure": "Measure",
-    "layers": "Layers",
-    "quick_quote": "Quick Quote",
-    "area": "Area",
-    "pitch": "Pitch",
-    "confidence": "Confidence",
-    "generate_pdf": "Generate PDF"
-  },
-  "pricing": {
-    "choose_plan": "Choose Your Flight Plan",
-    "starter": "Starter",
-    "professional": "Professional",
-    "enterprise": "Enterprise",
-    "most_popular": "Most Popular",
-    "contact_sales": "Contact Sales",
-    "choose": "Choose"
-  },
+
+
   "superAdmin": {
     "subtitle": "Super-Admin Global Overview",
     "totalRevenue": "Total Revenue",
@@ -150,6 +126,73 @@
       "privacy": "Privacy Policy",
       "status": "System Status",
       "docs": "Documentation"
+    }
+  },
+  "skymetric": {
+    "workspace": "Workspace",
+    "map": "Map",
+    "projects": "Projects",
+    "reports": "Reports",
+    "settings": "Settings",
+    "measure": "Measure",
+    "layers": "Layers",
+    "quickQuote": "Quick Quote",
+    "projectRef": "Project: Roof Analysis",
+    "estimated": "Estimated",
+    "area": "Area",
+    "pitch": "Pitch",
+    "confidence": "Confidence",
+    "generatePdf": "Generate PDF"
+  },
+  "pricing": {
+    "choose_plan": "Choose Your Flight Plan",
+    "subtitle": "Scale your telemetry and solar estimation operations with transparent, usage-based pricing designed for growing teams.",
+    "starter": "Starter",
+    "starterDesc": "For independent contractors.",
+    "professional": "Professional",
+    "professionalDesc": "For growing roofing enterprises.",
+    "enterprise": "Enterprise",
+    "enterpriseDesc": "For national scale operations.",
+    "mostPopular": "Most Popular",
+    "chooseStarter": "Choose Starter",
+    "choosePro": "Choose Professional",
+    "contact_sales": "Contact Sales"
+  },
+  "crm": {
+    "projectPipeline": "Project Pipeline",
+    "managing": "Managing",
+    "activeProjects": "active projects across regions",
+    "newProject": "New Project",
+    "captured": "Captured",
+    "measured": "Measured",
+    "quoted": "Quoted",
+    "contracted": "Contracted",
+    "salesRep": "Sales Rep",
+    "nav": {
+      "board": "Board",
+      "projects": "Projects",
+      "admin": "Admin",
+      "settings": "Settings"
+    }
+  },
+  "proposal": {
+    "title": "Digital Proposal",
+    "preparedFor": "Prepared for",
+    "map": "SkyMetric Satellite Map",
+    "precision": "PRECISION: 99.8%",
+    "materialBreakdown": "Material Breakdown",
+    "totalInvestment": "Total Investment",
+    "laborPermits": "Labor & Permits",
+    "materialsTotal": "Materials Total",
+    "accept": "Accept Proposal",
+    "terms": "Terms & Conditions",
+    "clickSign": "Click to Sign Digitally",
+    "authSignature": "Authorized Signature",
+    "nav": {
+      "proposal": "Proposal",
+      "dash": "Dash",
+      "clients": "Clients",
+      "settings": "Settings"
     }
   }
 }
