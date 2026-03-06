@@ -19,6 +19,9 @@ export default function DigitalProposal() {
       <div className="max-w-4xl mx-auto shadow-xl bg-white dark:bg-slate-900/50 min-h-screen pb-24 text-left">
         {/* Header */}
         <header className="flex items-center bg-white dark:bg-slate-900 p-4 sticky top-0 z-50 border-b border-primary/10">
+          <Link to="/crm" className="mr-4 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 transition-colors flex items-center justify-center">
+            <span className="material-symbols-outlined">arrow_back</span>
+          </Link>
           <div className="text-primary mr-4">
             {/* Added official logo here */}
             <img src="/falcon_point_logo_dark_mode/screen.png" alt="Falcon Point Logo" className="h-8 w-auto object-contain" />

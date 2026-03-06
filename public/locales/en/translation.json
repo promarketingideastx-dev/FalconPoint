@@ -193,6 +193,8 @@
       "proposal": "Proposal",
       "dash": "Dash",
       "clients": "Clients",
+      "projects": "Projects",
+      "map": "Map",
       "settings": "Settings"
     }
   },

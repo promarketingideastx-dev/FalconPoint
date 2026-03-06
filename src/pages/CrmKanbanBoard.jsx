@@ -159,15 +159,15 @@ export default function CrmKanbanBoard() {
           </Link>
           <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/skymetric-bright">
             <span className="material-symbols-outlined">map</span>
-            <span className="text-[10px] font-bold">Map</span>
+            <span className="text-[10px] font-bold">{t('nav.map')}</span>
           </Link>
           <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/dashboard">
             <span className="material-symbols-outlined">dashboard</span>
-            <span className="text-[10px] font-bold">{t('crm.nav.admin')}</span>
+            <span className="text-[10px] font-bold">{t('nav.dash')}</span>
           </Link>
           <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/settings">
             <span className="material-symbols-outlined">settings</span>
-            <span className="text-[10px] font-bold">{t('crm.nav.settings')}</span>
+            <span className="text-[10px] font-bold">{t('nav.settings')}</span>
           </Link>
         </div>
       </div>

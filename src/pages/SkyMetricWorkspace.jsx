@@ -33,6 +33,10 @@ export default function SkyMetricWorkspace() {
             </select>
           </div>
           <button className="material-symbols-outlined text-slate-500 hover:text-primary transition-colors">account_circle</button>
+          <div className="h-6 w-px bg-emerald-900/10 mx-1"></div>
+          <Link to="/crm" className="flex items-center justify-center p-2 rounded-lg bg-red-50 text-red-500 hover:bg-red-500 hover:text-white transition-colors">
+            <span className="material-symbols-outlined">close</span>
+          </Link>
         </div>
       </header>
 

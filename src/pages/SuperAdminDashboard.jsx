@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useProjects } from '../hooks/useProjects';
 import { seedDatabase } from '../utils/seedData';
 import { useAuth } from '../hooks/useAuth';
+import { auth } from '../firebase';
+import { signOut } from 'firebase/auth';
 
 export default function SuperAdminDashboard() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { user } = useAuth();
   const { projects, loading } = useProjects();
   const [isSeeding, setIsSeeding] = useState(false);
@@ -48,6 +51,13 @@ export default function SuperAdminDashboard() {
               <div className="size-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">
                 {user?.displayName?.[0] || 'JD'}
               </div>
+              <button 
+                onClick={() => { signOut(auth); navigate('/login'); }}
+                className="p-2 text-slate-400 hover:text-red-500 transition-colors ml-2"
+                title="Sign Out"
+              >
+                <span className="material-symbols-outlined">logout</span>
+              </button>
             </div>
           </div>
           <div className="mt-2 text-left">
@@ -258,8 +268,8 @@ export default function SuperAdminDashboard() {
               <span className="text-[10px] font-bold uppercase tracking-wider">{t('superAdmin.dashboard')}</span>
             </Link>
             <Link className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-primary transition-colors" to="/crm">
-              <span className="material-symbols-outlined">corporate_fare</span>
-              <span className="text-[10px] font-bold uppercase tracking-wider">{t('superAdmin.tenants')}</span>
+              <span className="material-symbols-outlined">folder</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider">{t('nav.projects')}</span>
             </Link>
             <Link className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-primary transition-colors" to="/skymetric">
               <span className="material-symbols-outlined">data_exploration</span>
