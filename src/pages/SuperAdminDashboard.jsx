@@ -161,7 +161,7 @@ export default function SuperAdminDashboard() {
           <div className="px-4 py-6 text-left">
             <div className="flex items-center justify-between mb-4 px-2">
               <h2 className="text-slate-900 dark:text-slate-50 text-xl font-bold leading-tight">{t('superAdmin.tenantsManagement')}</h2>
-              <button className="bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2">
+              <button onClick={() => alert('New Tenant creation flow coming in the next module!')} className="bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2">
                 <span className="material-symbols-outlined text-sm">add</span>
                 {t('superAdmin.newTenant')}
               </button>
@@ -192,7 +192,7 @@ export default function SuperAdminDashboard() {
                       </td>
                       <td className="px-6 py-4 text-sm text-slate-500">1.2M API/mo</td>
                       <td className="px-6 py-4 text-right">
-                        <button className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">{t('superAdmin.table.manage')}</button>
+                        <button onClick={() => alert('Tenant settings panel coming soon!')} className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">{t('superAdmin.table.manage')}</button>
                       </td>
                     </tr>
                     <tr className="hover:bg-primary/5 transition-colors">
@@ -208,7 +208,7 @@ export default function SuperAdminDashboard() {
                       </td>
                       <td className="px-6 py-4 text-sm text-slate-500">450K API/mo</td>
                       <td className="px-6 py-4 text-right">
-                        <button className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">{t('superAdmin.table.manage')}</button>
+                        <button onClick={() => alert('Tenant settings panel coming soon!')} className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">{t('superAdmin.table.manage')}</button>
                       </td>
                     </tr>
                     <tr className="hover:bg-primary/5 transition-colors">
@@ -224,7 +224,7 @@ export default function SuperAdminDashboard() {
                       </td>
                       <td className="px-6 py-4 text-sm text-slate-500">0 API/mo</td>
                       <td className="px-6 py-4 text-right">
-                        <button className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">{t('superAdmin.table.manage')}</button>
+                        <button onClick={() => alert('Tenant settings panel coming soon!')} className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">{t('superAdmin.table.manage')}</button>
                       </td>
                     </tr>
                     <tr className="hover:bg-primary/5 transition-colors">
@@ -240,7 +240,7 @@ export default function SuperAdminDashboard() {
                       </td>
                       <td className="px-6 py-4 text-sm text-slate-500">22K API/mo</td>
                       <td className="px-6 py-4 text-right">
-                        <button className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">{t('superAdmin.table.manage')}</button>
+                        <button onClick={() => alert('Tenant settings panel coming soon!')} className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">{t('superAdmin.table.manage')}</button>
                       </td>
                     </tr>
                   </tbody>

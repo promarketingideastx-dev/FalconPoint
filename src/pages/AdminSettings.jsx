@@ -1,9 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 export default function AdminSettings() {
   const { t, i18n } = useTranslation();
+
+  const [salesTeam, setSalesTeam] = useState([
+    { 
+      id: 1, 
+      name: 'Alex Rivera', 
+      email: 'alex@geopoint.com', 
+      roleKey: 'adminSettings.table.seniorSales', 
+      region: 'North America', 
+      performance: 85, 
+      status: 'Active',
+      avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBH3oXJTYDcP1Hq9K5zCbsVjFkyq_oirCxEflSs1W7Zd5kbMKY3MARKTaMvLVjcb0raSe0PtP8lNGTH5dioeF2-mOsU7dl5l5gZp1AzG3fRJZIHQZB_5fPLMUJn9noJMeLDA59iri_iK7EEQ4zycdAKqzSrtoT5bIionIxTqJXTc50Do87xWFs9QjuCQ6kqUtXYG7jn6PQpBEQdZTKVw621CaphYUSw2qIP9E_uHpGha6fJa3ugvV1fX13RJHxGTL1g0wsx471JhMQ'
+    },
+    { 
+      id: 2, 
+      name: 'Beatriz Silva', 
+      email: 'beatriz.s@geopoint.pt', 
+      roleKey: 'adminSettings.table.accountExec', 
+      region: 'Europe / PT', 
+      performance: 62, 
+      status: 'Active',
+      avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDdDcRxvSWc2iSiiz7r-kLXz2rs0cXEiIEO3LBbSOi_pZiOVcWK_bAgy1yHSgkC3fKjP4gdHkn99H5nkC2tb4jWh30FN2guwJJ6cfwbAK2VSBc2XdDu7KAuLh4HGRELmh-6_515yICfwWsTjUUDFQV5aXT087YWB--N5csldTLIHfK_zHnlAfGqhkIEVFnw09IFiHhcX1LEFPcx6pt1CTjG5F3SZqlXQZOPcdhAzYWgQFJDhwjQdhDFgB-vyLO0j7J7gO0DqRdQhBQ'
+    }
+  ]);
+
+  const handleAddSalesperson = () => {
+    const newId = Date.now();
+    const newPerson = {
+      id: newId,
+      name: `New Agent ${Math.floor(Math.random() * 1000)}`,
+      email: `agent${newId.toString().slice(-4)}@geopoint.com`,
+      roleKey: 'adminSettings.table.accountExec',
+      region: 'Global',
+      performance: 0,
+      status: 'Pending',
+      avatar: `https://ui-avatars.com/api/?name=New+Agent&background=0fb863&color=fff`
+    };
+    setSalesTeam([newPerson, ...salesTeam]);
+  };
 
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang.toLowerCase());
@@ -66,7 +104,7 @@ export default function AdminSettings() {
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{t('adminSettings.salesTeam')}</h2>
               <p className="text-slate-500 text-sm">{t('adminSettings.salesTeamDesc')}</p>
             </div>
-            <button className="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all">
+            <button onClick={handleAddSalesperson} className="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all">
               <span className="material-symbols-outlined">person_add</span> {t('adminSettings.addSalesperson')}
             </button>
           </div>
@@ -84,60 +122,36 @@ export default function AdminSettings() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
-                  {/* Row 1 */}
-                  <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-3">
-                        <div className="size-10 rounded-full bg-slate-200 overflow-hidden">
-                          <img alt="Alex" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH3oXJTYDcP1Hq9K5zCbsVjFkyq_oirCxEflSs1W7Zd5kbMKY3MARKTaMvLVjcb0raSe0PtP8lNGTH5dioeF2-mOsU7dl5l5gZp1AzG3fRJZIHQZB_5fPLMUJn9noJMeLDA59iri_iK7EEQ4zycdAKqzSrtoT5bIionIxTqJXTc50Do87xWFs9QjuCQ6kqUtXYG7jn6PQpBEQdZTKVw621CaphYUSw2qIP9E_uHpGha6fJa3ugvV1fX13RJHxGTL1g0wsx471JhMQ"/>
+                  {salesTeam.map((person) => (
+                    <tr key={person.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                      <td className="px-6 py-4">
+                        <div className="flex items-center gap-3">
+                          <div className="size-10 rounded-full bg-slate-200 overflow-hidden shrink-0 border border-slate-200 dark:border-slate-700">
+                            <img alt={person.name} src={person.avatar}/>
+                          </div>
+                          <div>
+                            <div className="font-semibold text-slate-900 dark:text-white">{person.name}</div>
+                            <div className="text-xs text-slate-500">{person.email}</div>
+                          </div>
                         </div>
-                        <div>
-                          <div className="font-semibold text-slate-900 dark:text-white">Alex Rivera</div>
-                          <div className="text-xs text-slate-500">alex@geopoint.com</div>
+                      </td>
+                      <td className="px-6 py-4 text-sm font-medium">{t(person.roleKey)}</td>
+                      <td className="px-6 py-4 text-sm">{person.region}</td>
+                      <td className="px-6 py-4">
+                        <div className="w-24 bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+                          <div className="bg-primary h-full transition-all duration-1000" style={{ width: `${person.performance}%` }}></div>
                         </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-sm font-medium">{t('adminSettings.table.seniorSales')}</td>
-                    <td className="px-6 py-4 text-sm">North America</td>
-                    <td className="px-6 py-4">
-                      <div className="w-24 bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
-                        <div className="bg-primary h-full w-[85%]"></div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase">{t('adminSettings.table.active')}</span>
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                      <button className="text-slate-400 hover:text-primary transition-colors"><span className="material-symbols-outlined">edit</span></button>
-                    </td>
-                  </tr>
-                  {/* Row 2 */}
-                  <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-3">
-                        <div className="size-10 rounded-full bg-slate-200 overflow-hidden">
-                          <img alt="Beatriz" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdDcRxvSWc2iSiiz7r-kLXz2rs0cXEiIEO3LBbSOi_pZiOVcWK_bAgy1yHSgkC3fKjP4gdHkn99H5nkC2tb4jWh30FN2guwJJ6cfwbAK2VSBc2XdDu7KAuLh4HGRELmh-6_515yICfwWsTjUUDFQV5aXT087YWB--N5csldTLIHfK_zHnlAfGqhkIEVFnw09IFiHhcX1LEFPcx6pt1CTjG5F3SZqlXQZOPcdhAzYWgQFJDhwjQdhDFgB-vyLO0j7J7gO0DqRdQhBQ"/>
-                        </div>
-                        <div>
-                          <div className="font-semibold text-slate-900 dark:text-white">Beatriz Silva</div>
-                          <div className="text-xs text-slate-500">beatriz.s@geopoint.pt</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-sm font-medium">{t('adminSettings.table.accountExec')}</td>
-                    <td className="px-6 py-4 text-sm">Europe / PT</td>
-                    <td className="px-6 py-4">
-                      <div className="w-24 bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
-                        <div className="bg-primary h-full w-[62%]"></div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase">{t('adminSettings.table.active')}</span>
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                      <button className="text-slate-400 hover:text-primary transition-colors"><span className="material-symbols-outlined">edit</span></button>
-                    </td>
-                  </tr>
+                      </td>
+                      <td className="px-6 py-4">
+                        <span className={`px-2 py-1 rounded-full text-[10px] font-bold uppercase ${person.status === 'Active' ? 'bg-primary/10 text-primary' : 'bg-amber-500/10 text-amber-500'}`}>
+                          {person.status === 'Active' ? t('adminSettings.table.active') : person.status}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 text-right">
+                        <button className="text-slate-400 hover:text-primary transition-colors"><span className="material-symbols-outlined">edit</span></button>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -149,7 +163,7 @@ export default function AdminSettings() {
           <section className="space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t('adminSettings.costItems')}</h3>
-              <button className="text-primary text-sm font-semibold hover:underline">{t('adminSettings.addItem')}</button>
+              <button onClick={() => alert('Cost item configurator coming soon!')} className="text-primary text-sm font-semibold hover:underline">{t('adminSettings.addItem')}</button>
             </div>
             <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
               <div className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
@@ -178,7 +192,7 @@ export default function AdminSettings() {
           <section className="space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t('adminSettings.dynamicPricing')}</h3>
-              <button className="text-primary text-sm font-semibold hover:underline">{t('adminSettings.newRule')}</button>
+              <button onClick={() => alert('Pricing rules engine coming soon!')} className="text-primary text-sm font-semibold hover:underline">{t('adminSettings.newRule')}</button>
             </div>
             <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
               <div className="flex items-center gap-4">
@@ -281,7 +295,7 @@ export default function AdminSettings() {
                 <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1">{t('adminSettings.api.apiKey')}</label>
                 <div className="flex items-center gap-2">
                   <input className="flex-1 bg-slate-50 dark:bg-slate-800 border border-red-500 rounded-lg text-xs py-2 px-3 focus:ring-primary outline-none" type="password" placeholder={t('adminSettings.api.missingKey')}/>
-                  <button className="bg-primary/10 text-primary p-2 rounded-lg hover:bg-primary/20 transition-colors"><span className="material-symbols-outlined text-sm">save</span></button>
+                  <button onClick={() => alert('API Key saved successfully!')} className="bg-primary/10 text-primary p-2 rounded-lg hover:bg-primary/20 transition-colors"><span className="material-symbols-outlined text-sm">save</span></button>
                 </div>
                 <p className="text-[10px] text-red-500 mt-1 font-semibold">{t('adminSettings.api.apiKeyReq')}</p>
               </div>

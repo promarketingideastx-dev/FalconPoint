@@ -135,7 +135,7 @@ export default function SkyMetricWorkspaceBright() {
           <span className="material-symbols-outlined">folder</span>
           <span className="text-[10px] font-bold uppercase tracking-widest">{t('skymetric.projects')}</span>
         </Link>
-        <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-600 transition-colors" to="/dashboard2">
+        <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-600 transition-colors" to="/dashboard">
           <span className="material-symbols-outlined">analytics</span>
           <span className="text-[10px] font-bold uppercase tracking-widest">{t('skymetric.reports')}</span>
         </Link>

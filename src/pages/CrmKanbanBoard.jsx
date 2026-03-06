@@ -82,10 +82,16 @@ export default function CrmKanbanBoard() {
         {/* Top Navigation */}
         <nav className="sticky top-0 z-50 flex items-center justify-between bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 h-16">
           <div className="flex items-center gap-3">
-            <img src="/falcon_point_logo_dark_mode/screen.png" alt="Falcon Point Logo" className="h-10 w-auto object-contain" />
-            <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">FALCON POINT</h1>
+            <Link to="/dashboard" className="flex items-center gap-3 hover:opacity-80 transition-opacity" title="Back to Dashboard">
+              <img src="/falcon_point_logo_dark_mode/screen.png" alt="Falcon Point Logo" className="h-10 w-auto object-contain" />
+              <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">FALCON POINT</h1>
+            </Link>
           </div>
           <div className="flex items-center gap-4">
+            <Link to="/dashboard" className="hidden md:flex items-center gap-1 text-sm font-bold text-slate-500 hover:text-primary transition-colors mr-2">
+              <span className="material-symbols-outlined text-lg">arrow_back</span>
+              Back to Dashboard
+            </Link>
             <div className="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
               <button className="px-3 py-1 text-xs font-bold bg-white dark:bg-slate-700 shadow-sm rounded-md text-primary">EN</button>
             </div>
@@ -128,11 +134,11 @@ export default function CrmKanbanBoard() {
             <span className="material-symbols-outlined">view_kanban</span>
             <span className="text-[10px] font-bold">{t('crm.nav.board')}</span>
           </Link>
-          <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/dashboard2">
-            <span className="material-symbols-outlined">folder</span>
-            <span className="text-[10px] font-bold">{t('crm.nav.projects')}</span>
+          <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/skymetric-bright">
+            <span className="material-symbols-outlined">map</span>
+            <span className="text-[10px] font-bold">Map</span>
           </Link>
-          <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/">
+          <Link className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" to="/dashboard">
             <span className="material-symbols-outlined">dashboard</span>
             <span className="text-[10px] font-bold">{t('crm.nav.admin')}</span>
           </Link>
