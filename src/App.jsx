@@ -19,6 +19,7 @@ import GeneratedScreen3 from './pages/GeneratedScreen3';
 import GeneratedScreen4 from './pages/GeneratedScreen4';
 import PricingPlans from './pages/PricingPlans';
 import UnderConstruction from './pages/UnderConstruction';
+import InstantQuoteWidget from './pages/InstantQuoteWidget';
 
 function App() {
   const { t } = useTranslation();
@@ -29,6 +30,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/landing" element={<LandingPage />} />
+          <Route path="/quote" element={<InstantQuoteWidget />} />
           
           {/* Protected Routes */}
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
