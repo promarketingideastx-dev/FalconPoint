@@ -33,7 +33,7 @@ function App() {
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           
           <Route path="/dashboard" element={
-            <ProtectedRoute><SuperAdminDashboard /></ProtectedRoute>
+            <ProtectedRoute allowedRoles={['superadmin', 'admin']}><SuperAdminDashboard /></ProtectedRoute>
           } />
           <Route path="/crm" element={
             <ProtectedRoute><CrmKanbanBoard /></ProtectedRoute>
@@ -48,13 +48,13 @@ function App() {
             <ProtectedRoute><DigitalProposal /></ProtectedRoute>
           } />
           <Route path="/settings" element={
-            <ProtectedRoute><AdminSettings /></ProtectedRoute>
+            <ProtectedRoute allowedRoles={['superadmin', 'admin']}><AdminSettings /></ProtectedRoute>
           } />
           <Route path="/dashboard1" element={
-            <ProtectedRoute><FalconPointDashboard1 /></ProtectedRoute>
+            <ProtectedRoute allowedRoles={['superadmin', 'admin']}><FalconPointDashboard1 /></ProtectedRoute>
           } />
           <Route path="/dashboard2" element={
-            <ProtectedRoute><FalconPointDashboard2 /></ProtectedRoute>
+            <ProtectedRoute allowedRoles={['superadmin', 'admin']}><FalconPointDashboard2 /></ProtectedRoute>
           } />
           
           {/* Generated Routes mapped to specific functions */}

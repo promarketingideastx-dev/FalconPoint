@@ -1,26 +1,52 @@
-import { useState, useEffect } from 'react';
-import { auth } from '../firebase';
+import { useEffect } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
+import { auth, db } from '../firebase';
+import { useStore } from '../store/useStore';
 
-// Mock implementation until real Firebase Auth is fully integrated
 export function useAuth() {
-  const [user, setUser] = useState({
-    uid: 'admin_user_001',
-    email: 'admin@falconpoint.os',
-    role: 'superadmin', // Enables cross-tenant access in Firestore Rules
-    org_id: 'org_falcon_01', // Active Organization
-    authorized_orgs: ['org_falcon_01', 'org_nexus_02', 'org_vertex_03'], // Enables Agnistic Org Jumping
-    displayName: 'Admin Manager'
-  });
-  
-  // Agnostic Org Jumper Stub (Will connect to Firebase in Phase 2)
-  const switchOrganization = (newOrgId) => {
-    if (user.authorized_orgs.includes(newOrgId) || user.role === 'superadmin') {
-      setUser({ ...user, org_id: newOrgId });
-      console.log(`[Auth] Switched active organization context to: ${newOrgId}`);
-    } else {
-      console.error('[Auth] Unauthorized to access this organization.');
-    }
-  };
+  const { user, authLoading, setUser, setAuthLoading, switchOrganization } = useStore();
 
-  return { user, switchOrganization };
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      if (firebaseUser) {
+        try {
+          // Fetch additional user metadata (roles, orgs) from Firestore
+          const userDoc = await getDoc(doc(db, 'users', firebaseUser.uid));
+          
+          if (userDoc.exists()) {
+            const userData = userDoc.data();
+            setUser({
+              uid: firebaseUser.uid,
+              email: firebaseUser.email,
+              displayName: firebaseUser.displayName || userData.name || 'User',
+              role: userData.role || 'sales',
+              org_id: userData.org_id || null,
+              authorized_orgs: userData.authorized_orgs || []
+            });
+          } else {
+            // Fallback for users without a Firestore doc
+            setUser({
+              uid: firebaseUser.uid,
+              email: firebaseUser.email,
+              displayName: firebaseUser.displayName || 'User',
+              role: 'sales',
+              org_id: null,
+              authorized_orgs: []
+            });
+          }
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+          setUser(null);
+        }
+      } else {
+        setUser(null);
+      }
+      setAuthLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, [setUser, setAuthLoading]);
+
+  return { user, loading: authLoading, switchOrganization };
 }

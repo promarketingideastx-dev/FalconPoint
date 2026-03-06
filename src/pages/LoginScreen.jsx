@@ -1,18 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase';
 
 export default function LoginScreen() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang.toLowerCase());
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    navigate('/');
+    setError('');
+    setIsLoggingIn(true);
+    
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate('/');
+    } catch (err) {
+      setError('Invalid credentials or account not found.');
+      console.error(err);
+    } finally {
+      setIsLoggingIn(false);
+    }
   };
 
   return (
@@ -61,7 +78,14 @@ export default function LoginScreen() {
                 <label className="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">Email address</label>
                 <div className="relative group">
                   <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">mail</span>
-                  <input className="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 outline-none" placeholder="name@company.com" type="email" required />
+                  <input 
+                    className="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 outline-none" 
+                    placeholder="name@company.com" 
+                    type="email" 
+                    required 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
               </div>
               <div className="space-y-2 relative">
@@ -71,7 +95,14 @@ export default function LoginScreen() {
                 </div>
                 <div className="relative group">
                   <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">lock</span>
-                  <input className="w-full pl-12 pr-12 py-3.5 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 outline-none" placeholder="••••••••" type="password" required />
+                  <input 
+                    className="w-full pl-12 pr-12 py-3.5 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 outline-none" 
+                    placeholder="••••••••" 
+                    type="password" 
+                    required 
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                   <button className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600" type="button">
                     <span className="material-symbols-outlined text-xl">visibility</span>
                   </button>
@@ -81,9 +112,20 @@ export default function LoginScreen() {
                 <input className="rounded border-slate-300 text-primary focus:ring-primary" id="remember" type="checkbox"/>
                 <label className="text-sm text-slate-600 dark:text-slate-400 cursor-pointer" htmlFor="remember">Stay signed in for 30 days</label>
               </div>
-              <button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group cursor-pointer">
-                Sign In
-                <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              {error && (
+                <div className="p-3 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-sm font-semibold rounded-lg flex items-center gap-2">
+                  <span className="material-symbols-outlined text-lg">error</span>
+                  {error}
+                </div>
+              )}
+              
+              <button 
+                type="submit" 
+                disabled={isLoggingIn}
+                className="w-full bg-primary hover:bg-primary/90 disabled:opacity-70 text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group cursor-pointer"
+              >
+                {isLoggingIn ? 'Authenticating...' : 'Sign In'}
+                {!isLoggingIn && <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>}
               </button>
             </form>
             <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center">

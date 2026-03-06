@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function AdminSettings() {
   const { t, i18n } = useTranslation();
+  const [activeModal, setActiveModal] = useState(null); // 'costItem', 'pricingRule', 'apiKey'
 
   const [salesTeam, setSalesTeam] = useState([
     { 
@@ -163,7 +164,12 @@ export default function AdminSettings() {
           <section className="space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t('adminSettings.costItems')}</h3>
-              <button onClick={() => alert('Cost item configurator coming soon!')} className="text-primary text-sm font-semibold hover:underline">{t('adminSettings.addItem')}</button>
+              <button 
+                onClick={() => setActiveModal('costItem')} 
+                className="text-primary text-sm font-semibold hover:underline"
+              >
+                {t('adminSettings.addItem')}
+              </button>
             </div>
             <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
               <div className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
@@ -192,7 +198,12 @@ export default function AdminSettings() {
           <section className="space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t('adminSettings.dynamicPricing')}</h3>
-              <button onClick={() => alert('Pricing rules engine coming soon!')} className="text-primary text-sm font-semibold hover:underline">{t('adminSettings.newRule')}</button>
+              <button 
+                onClick={() => setActiveModal('pricingRule')} 
+                className="text-primary text-sm font-semibold hover:underline"
+              >
+                {t('adminSettings.newRule')}
+              </button>
             </div>
             <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
               <div className="flex items-center gap-4">
@@ -295,7 +306,12 @@ export default function AdminSettings() {
                 <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1">{t('adminSettings.api.apiKey')}</label>
                 <div className="flex items-center gap-2">
                   <input className="flex-1 bg-slate-50 dark:bg-slate-800 border border-red-500 rounded-lg text-xs py-2 px-3 focus:ring-primary outline-none" type="password" placeholder={t('adminSettings.api.missingKey')}/>
-                  <button onClick={() => alert('API Key saved successfully!')} className="bg-primary/10 text-primary p-2 rounded-lg hover:bg-primary/20 transition-colors"><span className="material-symbols-outlined text-sm">save</span></button>
+                  <button 
+                    onClick={() => setActiveModal('apiKey')} 
+                    className="bg-primary/10 text-primary p-2 rounded-lg hover:bg-primary/20 transition-colors"
+                  >
+                    <span className="material-symbols-outlined text-sm">save</span>
+                  </button>
                 </div>
                 <p className="text-[10px] text-red-500 mt-1 font-semibold">{t('adminSettings.api.apiKeyReq')}</p>
               </div>
@@ -323,6 +339,24 @@ export default function AdminSettings() {
           <span className="text-[10px] font-medium">{t('superAdmin.apiLogs')}</span>
         </Link>
       </div>
+
+      {/* Tailwind UI Modal Placeholder overlay */}
+      {activeModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl p-6 w-full max-w-md space-y-4">
+            <div className="flex justify-between items-center">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Feature Under Construction</h3>
+              <button onClick={() => setActiveModal(null)} className="text-slate-400 hover:text-slate-600 transition-colors">
+                <span className="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <p className="text-slate-500 text-sm">This internal tool is currently disabled pending backend database synchronization. Modals will be fully interactive soon.</p>
+            <button onClick={() => setActiveModal(null)} className="w-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold py-3 rounded-lg transition-colors">
+              Close Preview
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="bg-white dark:bg-slate-900 mt-auto py-6 border-t border-slate-100 dark:border-slate-800">
