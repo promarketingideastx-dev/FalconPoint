@@ -8,6 +8,14 @@ export function useAuth() {
   const { user, authLoading, setUser, setAuthLoading, switchOrganization } = useStore();
 
   useEffect(() => {
+    // DEMO MODE BYPASS
+    if (import.meta.env.VITE_FIREBASE_API_KEY.includes('placeholder')) {
+      console.warn('Running in Demo Mode. Firebase Auth bypassed.');
+      // Do not hydrate user automatically so they see the login screen.
+      setAuthLoading(false);
+      return;
+    }
+
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       if (firebaseUser) {
         try {

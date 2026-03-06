@@ -13,6 +13,21 @@ import { db } from '../firebase';
 export const uploadProjectAsset = async (file, projectId, onProgress) => {
   if (!file || !projectId) throw new Error('File and Project ID are required.');
   
+  // DEMO MODE BYPASS
+  if (import.meta.env.VITE_FIREBASE_API_KEY.includes('placeholder')) {
+    return new Promise((resolve) => {
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += 20;
+        if (onProgress) onProgress(progress);
+        if (progress >= 100) {
+          clearInterval(interval);
+          resolve('https://demo.url/fake-asset-url.pdf');
+        }
+      }, 300);
+    });
+  }
+
   const fileExtension = file.name.split('.').pop();
   const safeFilename = `${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExtension}`;
   

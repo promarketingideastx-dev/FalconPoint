@@ -3,10 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
+import { useStore } from '../store/useStore';
 
 export default function LoginScreen() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const { setUser } = useStore();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -22,6 +24,22 @@ export default function LoginScreen() {
     setError('');
     setIsLoggingIn(true);
     
+    // DEMO MODE BYPASS
+    if (import.meta.env.VITE_FIREBASE_API_KEY.includes('placeholder')) {
+      setTimeout(() => {
+        setUser({
+          uid: 'demo_user_001',
+          email: email || 'demo@falconpoint.os',
+          displayName: 'Demo Agent',
+          role: 'superadmin',
+          org_id: 'org_falcon_01',
+          authorized_orgs: ['org_falcon_01']
+        });
+        navigate('/');
+      }, 1000);
+      return;
+    }
+
     try {
       if (isSignUp) {
         await createUserWithEmailAndPassword(auth, email, password);
