@@ -1,0 +1,59 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isSuperAdmin() {
+      // Assuming user document contains a role: 'superadmin'
+      return isAuthenticated() && 
+             get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'superadmin';
+    }
+    
+    function isMemberOfOrg(orgId) {
+      // Checks if the user's ID exists in the organization's members array
+      // This allows agnostic jumping between orgs if a user belongs to multiple
+      return isAuthenticated() && 
+             request.auth.uid in get(/databases/$(database)/documents/orgs/$(orgId)).data.members;
+    }
+
+    // ------------------------------------
+    // 1. Users Collection
+    // ------------------------------------
+    match /users/{userId} {
+      // Users can read/write their own profile
+      allow read, write: if isAuthenticated() && request.auth.uid == userId;
+      // Super admins can read any user profile
+      allow read: if isSuperAdmin();
+    }
+
+    // ------------------------------------
+    // 2. Organizations Collection (Multi-Tenant)
+    // ------------------------------------
+    match /orgs/{orgId} {
+      // Only Super Admins can list or read all organizations
+      allow read: if isSuperAdmin();
+      // Users can read the specific organization they belong to
+      allow get: if isMemberOfOrg(orgId);
+      
+      // Projects Sub-collection within an Org
+      match /projects/{projectId} {
+        // Must belong to the organization or be a superadmin to access its projects
+        allow read, write: if isMemberOfOrg(orgId) || isSuperAdmin();
+      }
+      
+      // Team Members Sub-collection within an Org
+      match /team/{memberId} {
+        allow read, write: if isMemberOfOrg(orgId) || isSuperAdmin();
+      }
+    }
+    
+    // Safest default: close all unbound reads/writes
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
