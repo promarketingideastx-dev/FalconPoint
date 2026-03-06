@@ -74,7 +74,32 @@
     "dashboard": "Painel",
     "tenants": "Inquilinos",
     "apiLogs": "Registros API",
-    "settings": "Configurações"
+    "settings": "Configurações",
+    "metrics": {
+      "vsLastMonth": "vs mês passado",
+      "growth": "crescimento",
+      "requests": "requisições"
+    },
+    "chart": {
+      "gMaps": "G-Maps",
+      "compute": "Computação",
+      "storage": "Armazenamento",
+      "vpc": "VPC"
+    },
+    "table": {
+      "company": "Nome da Empresa",
+      "tier": "Nível",
+      "status": "Status",
+      "usage": "Uso",
+      "actions": "Ações",
+      "enterprise": "Empresarial",
+      "standard": "Padrão",
+      "trial": "Teste",
+      "active": "Ativo",
+      "suspended": "Suspenso",
+      "pending": "Pendente",
+      "manage": "Gerir"
+    }
   },
   "adminSettings": {
     "teamManagement": "Gestão de Equipe",
@@ -84,7 +109,47 @@
     "salesTeamDesc": "Gerencie seus agentes de vendas globais e permissões.",
     "addSalesperson": "Adicionar Vendedor",
     "costItems": "Custos e Margens",
+    "addItem": "Adicionar Item",
     "dynamicPricing": "Regras de Preços Dinâmicos",
-    "coreApiIntegrations": "Integrações API Principais"
+    "newRule": "Nova Regra",
+    "coreApiIntegrations": "Integrações API Principais",
+    "table": {
+      "nameEmail": "Nome e Email",
+      "role": "Cargo",
+      "region": "Região",
+      "performance": "Desempenho",
+      "status": "Status",
+      "actions": "Ações",
+      "active": "Ativo",
+      "seniorSales": "Vendas Sênior",
+      "accountExec": "Executivo"
+    },
+    "pricing": {
+      "dataEnrichment": "Enriquecimento de Dados",
+      "dataEnrichmentDesc": "Custo por 1k registros",
+      "margin": "Margem",
+      "reverseGeocoding": "Geocodificação Reversa",
+      "reverseGeocodingDesc": "Por limite de chamada API",
+      "tier1": "Desconto Volume Nível 1",
+      "tier1Desc": "15% off com > 50k requisições",
+      "latam": "Multiplicador Região LATAM",
+      "latamDesc": "Ajuste de preços 0.85x em áreas-chave"
+    },
+    "api": {
+      "connected": "Conectado",
+      "checkConfig": "Verificar Config",
+      "googleDesc": "Para georreferenciamento e mapas.",
+      "twilioDesc": "Lida com 2FA e notificações.",
+      "resendDesc": "Emails transacionais e relatórios.",
+      "apiKey": "CHAVE API",
+      "missingKey": "Falta Chave API",
+      "apiKeyReq": "A chave é necessária para emails"
+    },
+    "footer": {
+      "rights": "© 2026 FALCON POINT Enterprise. Todos os direitos reservados.",
+      "privacy": "Privacidade",
+      "status": "Status do Sistema",
+      "docs": "Documentação"
+    }
   }
 }

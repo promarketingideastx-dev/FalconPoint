@@ -75,12 +75,12 @@ export default function AdminSettings() {
               <table className="w-full text-left">
                 <thead className="bg-slate-50 dark:bg-slate-800/50 text-slate-500 text-xs font-bold uppercase tracking-wider">
                   <tr>
-                    <th className="px-6 py-4">Name &amp; Email</th>
-                    <th className="px-6 py-4">Role</th>
-                    <th className="px-6 py-4">Region</th>
-                    <th className="px-6 py-4">Performance</th>
-                    <th className="px-6 py-4">Status</th>
-                    <th className="px-6 py-4 text-right">Actions</th>
+                    <th className="px-6 py-4">{t('adminSettings.table.nameEmail')}</th>
+                    <th className="px-6 py-4">{t('adminSettings.table.role')}</th>
+                    <th className="px-6 py-4">{t('adminSettings.table.region')}</th>
+                    <th className="px-6 py-4">{t('adminSettings.table.performance')}</th>
+                    <th className="px-6 py-4">{t('adminSettings.table.status')}</th>
+                    <th className="px-6 py-4 text-right">{t('adminSettings.table.actions')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
@@ -97,7 +97,7 @@ export default function AdminSettings() {
                         </div>
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-sm font-medium">Senior Sales</td>
+                    <td className="px-6 py-4 text-sm font-medium">{t('adminSettings.table.seniorSales')}</td>
                     <td className="px-6 py-4 text-sm">North America</td>
                     <td className="px-6 py-4">
                       <div className="w-24 bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
@@ -105,7 +105,7 @@ export default function AdminSettings() {
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase">Active</span>
+                      <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase">{t('adminSettings.table.active')}</span>
                     </td>
                     <td className="px-6 py-4 text-right">
                       <button className="text-slate-400 hover:text-primary transition-colors"><span className="material-symbols-outlined">edit</span></button>
@@ -124,7 +124,7 @@ export default function AdminSettings() {
                         </div>
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-sm font-medium">Account Exec</td>
+                    <td className="px-6 py-4 text-sm font-medium">{t('adminSettings.table.accountExec')}</td>
                     <td className="px-6 py-4 text-sm">Europe / PT</td>
                     <td className="px-6 py-4">
                       <div className="w-24 bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
@@ -132,7 +132,7 @@ export default function AdminSettings() {
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase">Active</span>
+                      <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase">{t('adminSettings.table.active')}</span>
                     </td>
                     <td className="px-6 py-4 text-right">
                       <button className="text-slate-400 hover:text-primary transition-colors"><span className="material-symbols-outlined">edit</span></button>
@@ -149,27 +149,27 @@ export default function AdminSettings() {
           <section className="space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t('adminSettings.costItems')}</h3>
-              <button className="text-primary text-sm font-semibold hover:underline">Add Item</button>
+              <button className="text-primary text-sm font-semibold hover:underline">{t('adminSettings.addItem')}</button>
             </div>
             <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
               <div className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
                 <div>
-                  <p className="text-sm font-bold">Standard Data Enrichment</p>
-                  <p className="text-xs text-slate-500">Unit cost per 1k records</p>
+                  <p className="text-sm font-bold">{t('adminSettings.pricing.dataEnrichment')}</p>
+                  <p className="text-xs text-slate-500">{t('adminSettings.pricing.dataEnrichmentDesc')}</p>
                 </div>
                 <div className="text-right">
                   <p className="text-sm font-bold text-primary">$4.50</p>
-                  <p className="text-[10px] text-slate-400">Margin: 35%</p>
+                  <p className="text-[10px] text-slate-400">{t('adminSettings.pricing.margin')}: 35%</p>
                 </div>
               </div>
               <div className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
                 <div>
-                  <p className="text-sm font-bold">Reverse Geocoding</p>
-                  <p className="text-xs text-slate-500">Per API call threshold</p>
+                  <p className="text-sm font-bold">{t('adminSettings.pricing.reverseGeocoding')}</p>
+                  <p className="text-xs text-slate-500">{t('adminSettings.pricing.reverseGeocodingDesc')}</p>
                 </div>
                 <div className="text-right">
                   <p className="text-sm font-bold text-primary">$0.12</p>
-                  <p className="text-[10px] text-slate-400">Margin: 20%</p>
+                  <p className="text-[10px] text-slate-400">{t('adminSettings.pricing.margin')}: 20%</p>
                 </div>
               </div>
             </div>
@@ -178,7 +178,7 @@ export default function AdminSettings() {
           <section className="space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t('adminSettings.dynamicPricing')}</h3>
-              <button className="text-primary text-sm font-semibold hover:underline">New Rule</button>
+              <button className="text-primary text-sm font-semibold hover:underline">{t('adminSettings.newRule')}</button>
             </div>
             <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
               <div className="flex items-center gap-4">
@@ -186,8 +186,8 @@ export default function AdminSettings() {
                   <span className="material-symbols-outlined text-primary">sell</span>
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-bold">Volume Discount Tier 1</p>
-                  <p className="text-xs text-slate-500">Apply 15% off for &gt; 50k monthly requests</p>
+                  <p className="text-sm font-bold">{t('adminSettings.pricing.tier1')}</p>
+                  <p className="text-xs text-slate-500">{t('adminSettings.pricing.tier1Desc')}</p>
                 </div>
                 <div className="form-switch cursor-pointer">
                   <div className="w-10 h-5 bg-primary rounded-full relative">
@@ -200,8 +200,8 @@ export default function AdminSettings() {
                   <span className="material-symbols-outlined text-primary">public</span>
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-bold">LATAM Region Multiplier</p>
-                  <p className="text-xs text-slate-500">Adjust list prices by 0.85x for specific geos</p>
+                  <p className="text-sm font-bold">{t('adminSettings.pricing.latam')}</p>
+                  <p className="text-xs text-slate-500">{t('adminSettings.pricing.latamDesc')}</p>
                 </div>
                 <div className="form-switch cursor-pointer">
                   <div className="w-10 h-5 bg-slate-300 dark:bg-slate-700 rounded-full relative">
@@ -224,15 +224,15 @@ export default function AdminSettings() {
                   <img alt="Google" className="size-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKIHJ2Wo-doOuRuWNkVPA-MRbiQ2aLvRPGyqjnQaqw11cdyRj-fxaDNFjmLHgH3-uqx517sGjmv6Um0XOLuceO-J8Adug9Eq-kOHxaVxC3Ui2GXGx6bla6cAe11pl-518K_PkJeQANsBEqBkHbOjF5rl59Xcs_Wl8FZ8r53AHSoEg0ZpYW-6fHY3eukzY9c3OYocxRLVIB9mvMaeaeUQvunTJnnAjjCgZaOmeR8MoSifDldJ0rUP_CbSSCo_snY7v-UnerhdMp3hM"/>
                 </div>
                 <span className="flex items-center gap-1 text-[10px] font-bold text-primary uppercase">
-                  <span className="size-2 rounded-full bg-primary"></span> Connected
+                  <span className="size-2 rounded-full bg-primary"></span> {t('adminSettings.api.connected')}
                 </span>
               </div>
               <div>
                 <h4 className="font-bold text-sm">Google Cloud API</h4>
-                <p className="text-xs text-slate-500">Used for geocoding and map rendering.</p>
+                <p className="text-xs text-slate-500">{t('adminSettings.api.googleDesc')}</p>
               </div>
               <div className="mt-auto">
-                <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1">API KEY</label>
+                <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1">{t('adminSettings.api.apiKey')}</label>
                 <div className="flex items-center gap-2">
                   <input className="flex-1 bg-slate-50 dark:bg-slate-800 border-none rounded-lg text-xs py-2 px-3 focus:ring-primary outline-none" readOnly type="password" value="AIzaSyA_****************"/>
                   <button className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"><span className="material-symbols-outlined text-sm">visibility</span></button>
@@ -247,12 +247,12 @@ export default function AdminSettings() {
                   T
                 </div>
                 <span className="flex items-center gap-1 text-[10px] font-bold text-primary uppercase">
-                  <span className="size-2 rounded-full bg-primary"></span> Connected
+                  <span className="size-2 rounded-full bg-primary"></span> {t('adminSettings.api.connected')}
                 </span>
               </div>
               <div>
                 <h4 className="font-bold text-sm">Twilio SMS</h4>
-                <p className="text-xs text-slate-500">Handles 2FA and sales notifications.</p>
+                <p className="text-xs text-slate-500">{t('adminSettings.api.twilioDesc')}</p>
               </div>
               <div className="mt-auto">
                 <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1">ACCOUNT SID</label>
@@ -270,20 +270,20 @@ export default function AdminSettings() {
                   <span className="material-symbols-outlined text-slate-900 dark:text-white">alternate_email</span>
                 </div>
                 <span className="flex items-center gap-1 text-[10px] font-bold text-amber-500 uppercase">
-                  <span className="size-2 rounded-full bg-amber-500"></span> Check Config
+                  <span className="size-2 rounded-full bg-amber-500"></span> {t('adminSettings.api.checkConfig')}
                 </span>
               </div>
               <div>
                 <h4 className="font-bold text-sm">Resend Email</h4>
-                <p className="text-xs text-slate-500">Transactional emails and reports.</p>
+                <p className="text-xs text-slate-500">{t('adminSettings.api.resendDesc')}</p>
               </div>
               <div className="mt-auto">
-                <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1">API KEY</label>
+                <label className="block text-[10px] font-bold text-slate-400 uppercase mb-1">{t('adminSettings.api.apiKey')}</label>
                 <div className="flex items-center gap-2">
-                  <input className="flex-1 bg-slate-50 dark:bg-slate-800 border border-red-500 rounded-lg text-xs py-2 px-3 focus:ring-primary outline-none" type="password" placeholder="Missing API Key"/>
+                  <input className="flex-1 bg-slate-50 dark:bg-slate-800 border border-red-500 rounded-lg text-xs py-2 px-3 focus:ring-primary outline-none" type="password" placeholder={t('adminSettings.api.missingKey')}/>
                   <button className="bg-primary/10 text-primary p-2 rounded-lg hover:bg-primary/20 transition-colors"><span className="material-symbols-outlined text-sm">save</span></button>
                 </div>
-                <p className="text-[10px] text-red-500 mt-1 font-semibold">API Key is required to send emails</p>
+                <p className="text-[10px] text-red-500 mt-1 font-semibold">{t('adminSettings.api.apiKeyReq')}</p>
               </div>
             </div>
           </div>
@@ -313,11 +313,11 @@ export default function AdminSettings() {
       {/* Footer */}
       <footer className="bg-white dark:bg-slate-900 mt-auto py-6 border-t border-slate-100 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-slate-400 text-xs">© 2026 FALCON POINT Enterprise. All rights reserved.</p>
+          <p className="text-slate-400 text-xs">{t('adminSettings.footer.rights')}</p>
           <div className="flex gap-6">
-            <Link className="text-xs text-slate-400 hover:text-primary transition-colors" to="/construction">Privacy Policy</Link>
-            <Link className="text-xs text-slate-400 hover:text-primary transition-colors" to="/construction">System Status</Link>
-            <Link className="text-xs text-slate-400 hover:text-primary transition-colors" to="/construction">Documentation</Link>
+            <Link className="text-xs text-slate-400 hover:text-primary transition-colors" to="/construction">{t('adminSettings.footer.privacy')}</Link>
+            <Link className="text-xs text-slate-400 hover:text-primary transition-colors" to="/construction">{t('adminSettings.footer.status')}</Link>
+            <Link className="text-xs text-slate-400 hover:text-primary transition-colors" to="/construction">{t('adminSettings.footer.docs')}</Link>
           </div>
         </div>
       </footer>

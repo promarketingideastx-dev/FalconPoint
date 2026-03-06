@@ -74,7 +74,32 @@
     "dashboard": "Dashboard",
     "tenants": "Tenants",
     "apiLogs": "API Logs",
-    "settings": "Settings"
+    "settings": "Settings",
+    "metrics": {
+      "vsLastMonth": "vs last month",
+      "growth": "growth",
+      "requests": "requests"
+    },
+    "chart": {
+      "gMaps": "G-Maps",
+      "compute": "Compute",
+      "storage": "Storage",
+      "vpc": "VPC"
+    },
+    "table": {
+      "company": "Company Name",
+      "tier": "Tier",
+      "status": "Status",
+      "usage": "Usage",
+      "actions": "Actions",
+      "enterprise": "Enterprise",
+      "standard": "Standard",
+      "trial": "Trial",
+      "active": "Active",
+      "suspended": "Suspended",
+      "pending": "Pending",
+      "manage": "Manage"
+    }
   },
   "adminSettings": {
     "teamManagement": "Team Management",
@@ -84,7 +109,47 @@
     "salesTeamDesc": "Manage your global sales agents and their permissions.",
     "addSalesperson": "Add Salesperson",
     "costItems": "Cost Items & Margins",
+    "addItem": "Add Item",
     "dynamicPricing": "Dynamic Pricing Rules",
-    "coreApiIntegrations": "Core API Integrations"
+    "newRule": "New Rule",
+    "coreApiIntegrations": "Core API Integrations",
+    "table": {
+      "nameEmail": "Name & Email",
+      "role": "Role",
+      "region": "Region",
+      "performance": "Performance",
+      "status": "Status",
+      "actions": "Actions",
+      "active": "Active",
+      "seniorSales": "Senior Sales",
+      "accountExec": "Account Exec"
+    },
+    "pricing": {
+      "dataEnrichment": "Standard Data Enrichment",
+      "dataEnrichmentDesc": "Unit cost per 1k records",
+      "margin": "Margin",
+      "reverseGeocoding": "Reverse Geocoding",
+      "reverseGeocodingDesc": "Per API call threshold",
+      "tier1": "Volume Discount Tier 1",
+      "tier1Desc": "Apply 15% off for > 50k monthly requests",
+      "latam": "LATAM Region Multiplier",
+      "latamDesc": "Adjust list prices by 0.85x for specific geos"
+    },
+    "api": {
+      "connected": "Connected",
+      "checkConfig": "Check Config",
+      "googleDesc": "Used for geocoding and map rendering.",
+      "twilioDesc": "Handles 2FA and sales notifications.",
+      "resendDesc": "Transactional emails and reports.",
+      "apiKey": "API KEY",
+      "missingKey": "Missing API Key",
+      "apiKeyReq": "API Key is required to send emails"
+    },
+    "footer": {
+      "rights": "© 2026 FALCON POINT Enterprise. All rights reserved.",
+      "privacy": "Privacy Policy",
+      "status": "System Status",
+      "docs": "Documentation"
+    }
   }
 }

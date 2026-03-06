@@ -74,7 +74,32 @@
     "dashboard": "Panel",
     "tenants": "Inquilinos",
     "apiLogs": "Registros API",
-    "settings": "Configuración"
+    "settings": "Configuración",
+    "metrics": {
+      "vsLastMonth": "vs mes anterior",
+      "growth": "crecimiento",
+      "requests": "peticiones"
+    },
+    "chart": {
+      "gMaps": "G-Maps",
+      "compute": "Cómputo",
+      "storage": "Almacenamiento",
+      "vpc": "VPC"
+    },
+    "table": {
+      "company": "Nombre de Empresa",
+      "tier": "Nivel",
+      "status": "Estado",
+      "usage": "Uso",
+      "actions": "Acciones",
+      "enterprise": "Empresarial",
+      "standard": "Estándar",
+      "trial": "Prueba",
+      "active": "Activo",
+      "suspended": "Suspendido",
+      "pending": "Pendiente",
+      "manage": "Gestionar"
+    }
   },
   "adminSettings": {
     "teamManagement": "Gestión de Equipo",
@@ -84,7 +109,47 @@
     "salesTeamDesc": "Gestiona a tus agentes de ventas globales y sus permisos.",
     "addSalesperson": "Agregar Vendedor",
     "costItems": "Costos y Márgenes",
+    "addItem": "Añadir Ítem",
     "dynamicPricing": "Reglas Dinámicas de Precios",
-    "coreApiIntegrations": "Integraciones API Base"
+    "newRule": "Nueva Regla",
+    "coreApiIntegrations": "Integraciones API Base",
+    "table": {
+      "nameEmail": "Nombre y Email",
+      "role": "Rol",
+      "region": "Región",
+      "performance": "Rendimiento",
+      "status": "Estado",
+      "actions": "Acciones",
+      "active": "Activo",
+      "seniorSales": "Ventas Senior",
+      "accountExec": "Ejecutivo"
+    },
+    "pricing": {
+      "dataEnrichment": "Enriquecimiento de Datos",
+      "dataEnrichmentDesc": "Costo por 1k registros",
+      "margin": "Margen",
+      "reverseGeocoding": "Geocodificación Inversa",
+      "reverseGeocodingDesc": "Por umbral de llamada API",
+      "tier1": "Descuento Volumen Nivel 1",
+      "tier1Desc": "15% desc. con > 50k peticiones",
+      "latam": "Multiplicador Región LATAM",
+      "latamDesc": "Ajusta precios 0.85x en áreas clave"
+    },
+    "api": {
+      "connected": "Conectado",
+      "checkConfig": "Verificar Config",
+      "googleDesc": "Para georreferenciación y mapas.",
+      "twilioDesc": "Gestión de 2FA y notificaciones.",
+      "resendDesc": "Emails transaccionales y reportes.",
+      "apiKey": "CLAVE API",
+      "missingKey": "Falta Clave API",
+      "apiKeyReq": "La clave es necesaria para emails"
+    },
+    "footer": {
+      "rights": "© 2026 FALCON POINT Enterprise. Todos los derechos reservados.",
+      "privacy": "Privacidad",
+      "status": "Estado del Sistema",
+      "docs": "Documentación"
+    }
   }
 }

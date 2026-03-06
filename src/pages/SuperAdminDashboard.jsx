@@ -69,7 +69,7 @@ export default function SuperAdminDashboard() {
               </p>
               <div className="flex items-center gap-1 mt-1">
                 <span className="material-symbols-outlined text-primary text-sm">trending_up</span>
-                <p className="text-primary text-sm font-bold">+14.2% vs last month</p>
+                <p className="text-primary text-sm font-bold">+14.2% {t('superAdmin.metrics.vsLastMonth')}</p>
               </div>
             </div>
             
@@ -81,7 +81,7 @@ export default function SuperAdminDashboard() {
               <p className="text-slate-900 dark:text-slate-50 tracking-tight text-3xl font-bold leading-tight">1,452</p>
               <div className="flex items-center gap-1 mt-1">
                 <span className="material-symbols-outlined text-primary text-sm">trending_up</span>
-                <p className="text-primary text-sm font-bold">+8.5% growth</p>
+                <p className="text-primary text-sm font-bold">+8.5% {t('superAdmin.metrics.growth')}</p>
               </div>
             </div>
             
@@ -93,7 +93,7 @@ export default function SuperAdminDashboard() {
               <p className="text-slate-900 dark:text-slate-50 tracking-tight text-3xl font-bold leading-tight">104.5M</p>
               <div className="flex items-center gap-1 mt-1">
                 <span className="material-symbols-outlined text-primary text-sm">trending_up</span>
-                <p className="text-primary text-sm font-bold">+18.2% requests</p>
+                <p className="text-primary text-sm font-bold">+18.2% {t('superAdmin.metrics.requests')}</p>
               </div>
             </div>
           </div>
@@ -139,19 +139,19 @@ export default function SuperAdminDashboard() {
               <div className="grid min-h-[160px] grid-flow-col gap-8 grid-rows-[1fr_auto] items-end justify-items-center px-4">
                 <div className="group relative w-full flex flex-col items-center justify-end h-full">
                   <div className="bg-primary/20 hover:bg-primary/30 border-t-4 border-primary w-full transition-all duration-300" style={{ height: '75%' }}></div>
-                  <p className="mt-2 text-slate-500 text-[11px] font-bold uppercase tracking-widest">G-Maps</p>
+                  <p className="mt-2 text-slate-500 text-[11px] font-bold uppercase tracking-widest">{t('superAdmin.chart.gMaps')}</p>
                 </div>
                 <div className="group relative w-full flex flex-col items-center justify-end h-full">
                   <div className="bg-primary/20 hover:bg-primary/30 border-t-4 border-primary w-full transition-all duration-300" style={{ height: '45%' }}></div>
-                  <p className="mt-2 text-slate-500 text-[11px] font-bold uppercase tracking-widest">Compute</p>
+                  <p className="mt-2 text-slate-500 text-[11px] font-bold uppercase tracking-widest">{t('superAdmin.chart.compute')}</p>
                 </div>
                 <div className="group relative w-full flex flex-col items-center justify-end h-full">
                   <div className="bg-primary/20 hover:bg-primary/30 border-t-4 border-primary w-full transition-all duration-300" style={{ height: '90%' }}></div>
-                  <p className="mt-2 text-slate-500 text-[11px] font-bold uppercase tracking-widest">Storage</p>
+                  <p className="mt-2 text-slate-500 text-[11px] font-bold uppercase tracking-widest">{t('superAdmin.chart.storage')}</p>
                 </div>
                 <div className="group relative w-full flex flex-col items-center justify-end h-full">
                   <div className="bg-primary/20 hover:bg-primary/30 border-t-4 border-primary w-full transition-all duration-300" style={{ height: '60%' }}></div>
-                  <p className="mt-2 text-slate-500 text-[11px] font-bold uppercase tracking-widest">VPC</p>
+                  <p className="mt-2 text-slate-500 text-[11px] font-bold uppercase tracking-widest">{t('superAdmin.chart.vpc')}</p>
                 </div>
               </div>
             </div>
@@ -171,11 +171,11 @@ export default function SuperAdminDashboard() {
                 <table className="w-full text-left">
                   <thead className="bg-background-light dark:bg-slate-800 border-b border-primary/10">
                     <tr>
-                      <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Company Name</th>
-                      <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Tier</th>
-                      <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Status</th>
-                      <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Usage</th>
-                      <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 text-right">Actions</th>
+                      <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">{t('superAdmin.table.company')}</th>
+                      <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">{t('superAdmin.table.tier')}</th>
+                      <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">{t('superAdmin.table.status')}</th>
+                      <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">{t('superAdmin.table.usage')}</th>
+                      <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 text-right">{t('superAdmin.table.actions')}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-primary/5">
@@ -186,13 +186,13 @@ export default function SuperAdminDashboard() {
                           <span className="font-semibold text-slate-900 dark:text-slate-50">Nexus Global</span>
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-sm font-medium">Enterprise</td>
+                      <td className="px-6 py-4 text-sm font-medium">{t('superAdmin.table.enterprise')}</td>
                       <td className="px-6 py-4">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary/10 text-primary">Active</span>
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary/10 text-primary">{t('superAdmin.table.active')}</span>
                       </td>
                       <td className="px-6 py-4 text-sm text-slate-500">1.2M API/mo</td>
                       <td className="px-6 py-4 text-right">
-                        <button className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">Manage</button>
+                        <button className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">{t('superAdmin.table.manage')}</button>
                       </td>
                     </tr>
                     <tr className="hover:bg-primary/5 transition-colors">
@@ -202,13 +202,13 @@ export default function SuperAdminDashboard() {
                           <span className="font-semibold text-slate-900 dark:text-slate-50">Quantum Labs</span>
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-sm font-medium">Standard</td>
+                      <td className="px-6 py-4 text-sm font-medium">{t('superAdmin.table.standard')}</td>
                       <td className="px-6 py-4">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary/10 text-primary">Active</span>
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary/10 text-primary">{t('superAdmin.table.active')}</span>
                       </td>
                       <td className="px-6 py-4 text-sm text-slate-500">450K API/mo</td>
                       <td className="px-6 py-4 text-right">
-                        <button className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">Manage</button>
+                        <button className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">{t('superAdmin.table.manage')}</button>
                       </td>
                     </tr>
                     <tr className="hover:bg-primary/5 transition-colors">
@@ -218,13 +218,13 @@ export default function SuperAdminDashboard() {
                           <span className="font-semibold text-slate-900 dark:text-slate-50">Vertex FinTech</span>
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-sm font-medium">Enterprise</td>
+                      <td className="px-6 py-4 text-sm font-medium">{t('superAdmin.table.enterprise')}</td>
                       <td className="px-6 py-4">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-600">Suspended</span>
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-600">{t('superAdmin.table.suspended')}</span>
                       </td>
                       <td className="px-6 py-4 text-sm text-slate-500">0 API/mo</td>
                       <td className="px-6 py-4 text-right">
-                        <button className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">Manage</button>
+                        <button className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">{t('superAdmin.table.manage')}</button>
                       </td>
                     </tr>
                     <tr className="hover:bg-primary/5 transition-colors">
@@ -234,13 +234,13 @@ export default function SuperAdminDashboard() {
                           <span className="font-semibold text-slate-900 dark:text-slate-50">Astra Tech</span>
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-sm font-medium">Trial</td>
+                      <td className="px-6 py-4 text-sm font-medium">{t('superAdmin.table.trial')}</td>
                       <td className="px-6 py-4">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-600">Pending</span>
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-600">{t('superAdmin.table.pending')}</span>
                       </td>
                       <td className="px-6 py-4 text-sm text-slate-500">22K API/mo</td>
                       <td className="px-6 py-4 text-right">
-                        <button className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">Manage</button>
+                        <button className="text-primary hover:text-primary/70 font-bold text-sm underline decoration-2 underline-offset-4">{t('superAdmin.table.manage')}</button>
                       </td>
                     </tr>
                   </tbody>
